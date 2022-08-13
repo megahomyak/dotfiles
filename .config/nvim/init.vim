@@ -185,19 +185,6 @@ Plug 'arithran/vim-delete-hidden-buffers'
 
 Plug 'wesQ3/vim-windowswap'
 
-"Plug 'romgrk/barbar.nvim'
-"function ChangeTabColors()
-"    echo 1
-"    hi BufferInactive guibg=#000000 guifg=#000000
-"endfunction
-"autocmd ColorScheme call ChangeTabColors()
-"let bufferline = get(g:, 'bufferline', {})
-"let bufferline.icons = v:false
-"let bufferline.icon_pinned = "T"
-"let bufferline.auto_hide = v:true
-"let bufferline.closable = v:false
-"let bufferline.maximum_padding = 1
-
 Plug 'preservim/nerdtree'
 let g:NERDTreeIgnore = []  " Because by default it ignores .db
 let g:NERDTreeWinSizeMax = 30
@@ -254,8 +241,6 @@ Plug 'DataWraith/auto_mkdir'
 Plug 'lambdalisue/suda.vim'
 
 Plug 'tpope/vim-surround'
-
-" Plug 'HallerPatrick/py_lsp.nvim'
 
 Plug 'junegunn/limelight.vim'
 
@@ -391,8 +376,6 @@ cmp.setup {
         ['<Tab>'] = function(fallback)
             if cmp.visible() then
                 cmp.select_next_item()
-            -- elseif luasnip.expand_or_jumpable() then
-                -- luasnip.expand_or_jump()
             else
                 fallback()
             end
@@ -400,8 +383,6 @@ cmp.setup {
         ['<S-Tab>'] = function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
-            -- elseif luasnip.jumpable(-1) then
-                -- luasnip.jump(-1)
             else
                 fallback()
             end
