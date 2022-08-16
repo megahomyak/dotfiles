@@ -17,6 +17,7 @@ let mapleader="\\"
 language en_US.UTF-8
 set undofile  " Save undo stack between sessions
 set fileformat=unix  " LF > CRLF
+set mouse=  " No more mouse controls!
 
 
 " Quick replacement command
@@ -285,7 +286,7 @@ require "lsp_signature".setup({
 })
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'clangd', 'gopls' }  -- pylsp is turned off because it is very slow and buggy
+local servers = { 'clangd', 'gopls', 'pylsp' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         capabilities = capabilities,
