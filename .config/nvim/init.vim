@@ -428,7 +428,7 @@ set statusline=[%n]\ %F%(\ %m%)\ %l/%L\ (%p%%)%(\ %{v:lua.diagnostics()}%)%(\ \|
 nnoremap <silent> <Leader>e :lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})<CR>
 nnoremap <silent> <Leader>d :lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <Leader>r :lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> <Leader>z :lua vim.lsp.buf.formatting()<CR>
+nnoremap <silent> <Leader>z :lua vim.lsp.buf.format { async = true }<CR>
 nnoremap <silent> <Leader>x :lua vim.lsp.buf.code_action()<CR>
 command Hdef lua vim.lsp.buf.definition()
 command Def silent normal <C-w>s:lua vim.lsp.buf.definition()<CR>
