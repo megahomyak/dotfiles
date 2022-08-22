@@ -176,12 +176,7 @@ Plug 'easymotion/vim-easymotion'
 " Go to any symbol on the screen by pressing .
 nmap <silent> <Space> <Plug>(easymotion-bd-f)
 
-Plug 'tmsvg/pear-tree'
-let g:pear_tree_repeatable_expand = 0
-let g:pear_tree_smart_openers = 1
-let g:pear_tree_smart_closers = 1
-let g:pear_tree_smart_backspace = 1
-let g:pear_tree_timeout = 200
+Plug 'cohama/lexima.vim'
 
 Plug 'simrat39/rust-tools.nvim'
 
@@ -268,6 +263,10 @@ Dark
 
 call plug#end()
 colorscheme gruvbox
+call lexima#add_rule({'char': '<', 'input_after': '>', 'filetype': 'rust'})
+call lexima#add_rule({'char': '>', 'at': '\%#>', 'leave': 1, 'filetype': 'rust'})
+call lexima#add_rule({'char': '<BS>', 'at': '<\%#>', 'delete': 1, 'filetype': 'rust'})
+call lexima#add_rule({'char': "'", 'input_after': '', 'filetype': 'rust'})
 
 lua << EOF
 -- A nasty workaround to add the still-not-released logger functionality
