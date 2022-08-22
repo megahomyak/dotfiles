@@ -176,9 +176,12 @@ Plug 'easymotion/vim-easymotion'
 " Go to any symbol on the screen by pressing .
 nmap <silent> <Space> <Plug>(easymotion-bd-f)
 
-Plug 'jiangmiao/auto-pairs'
-autocmd FileType rust let b:AutoPairs = AutoPairsDefine({'<': '>//n'}, ["'"])  " Adding < > pairs, removing ' ' pairs
-let g:AutoPairsMultilineClose = 0  " Do not remove whitespaces between quotes if they are on the different lines and the first one is closed
+Plug 'tmsvg/pear-tree'
+let g:pear_tree_repeatable_expand = 0
+let g:pear_tree_smart_openers = 1
+let g:pear_tree_smart_closers = 1
+let g:pear_tree_smart_backspace = 1
+let g:pear_tree_timeout = 200
 
 Plug 'simrat39/rust-tools.nvim'
 
@@ -265,7 +268,6 @@ Dark
 
 call plug#end()
 colorscheme gruvbox
-
 
 lua << EOF
 -- A nasty workaround to add the still-not-released logger functionality
