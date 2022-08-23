@@ -214,7 +214,6 @@ command Back vert res 30
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 nnoremap <Leader>f :FZF<CR>
-let g:fzf_action = {"enter": "tab split"}
 
 Plug 'airblade/vim-rooter'
 let g:rooter_silent_chdir = 1
