@@ -230,6 +230,10 @@ nmap <silent> w <Plug>CamelCaseMotion_w
 nmap <silent> e <Plug>CamelCaseMotion_e
 nmap <silent> e <Plug>CamelCaseMotion_e
 nmap <silent> b <Plug>CamelCaseMotion_b
+vmap <silent> w <Plug>CamelCaseMotion_w
+vmap <silent> e <Plug>CamelCaseMotion_e
+vmap <silent> e <Plug>CamelCaseMotion_e
+vmap <silent> b <Plug>CamelCaseMotion_b
 
 Plug 'brooth/far.vim'
 
