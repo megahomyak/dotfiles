@@ -264,6 +264,10 @@ command Dark set bg=dark
 command Light set bg=light
 Dark
 
+Plug 'dart-lang/dart-vim-plugin'
+
+Plug 'thosakwe/vim-flutter'
+
 call plug#end()
 colorscheme gruvbox
 call lexima#add_rule({'char': '<', 'input_after': '>', 'filetype': 'rust'})
