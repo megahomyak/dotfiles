@@ -295,7 +295,7 @@ require "lsp_signature".setup({
 })
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = { 'clangd', 'gopls', 'pylsp' }
+local servers = { 'clangd', 'gopls', 'pylsp', 'dartls' }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
         capabilities = capabilities,
