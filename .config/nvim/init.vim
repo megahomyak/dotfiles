@@ -267,6 +267,7 @@ Dark
 Plug 'dart-lang/dart-vim-plugin'
 
 Plug 'thosakwe/vim-flutter'
+let g:flutter_autoscroll = 1
 
 call plug#end()
 colorscheme gruvbox
