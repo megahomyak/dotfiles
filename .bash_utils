@@ -1,0 +1,7 @@
+alias superclippy="cargo clippy -- -W clippy::pedantic -W clippy::nursery -W clippy::all"
+c() { cd "$@" && ls; }
+alias rand="ls | shuf -n 1"
+detach() {
+    "$@" &
+    disown -h %%
+}
