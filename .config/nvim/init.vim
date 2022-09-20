@@ -19,6 +19,10 @@ set undofile  " Save undo stack between sessions
 set fileformat=unix  " LF > CRLF
 set mouse=  " No more mouse controls!
 
+au FileType dart
+    \ set shiftwidth=2 |
+    \ set softtabstop=2
+
 
 " Quick replacement command
 nnoremap <Leader>1 :%s/\v//g<left><left><left>
