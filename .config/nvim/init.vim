@@ -9,6 +9,7 @@ set fillchars+=vert:\
 set cmdheight=0
 nnoremap <silent> <C-g> :echo expand("%") . " \| " . line(".") . "/" . line("$")<CR>
 nnoremap <silent> <Esc> :noh<CR>
+au ColorScheme * highlight EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 call plug#begin()
 Plug 'neovim/nvim-lspconfig'
 Plug 'morhetz/gruvbox'
@@ -27,8 +28,20 @@ cmp.setup {
             behavior = cmp.ConfirmBehavior.Replace,
             select = true,
         },
-        ['<Tab>'] = function(fallback) cmp.select_next_item() end,
-        ['<S-Tab>'] = function(fallback) cmp.select_prev_item() end,
+        ['<Tab>'] = function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            else
+                fallback()
+            end
+        end,
+        ['<S-Tab>'] = function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            else
+                fallback()
+            end
+        end,
     },
     sources = {{ name = "nvim_lsp" }},
 }
@@ -42,4 +55,3 @@ nnoremap <silent> <Leader>r :lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <Leader>z :lua vim.lsp.buf.format { async = true }<CR>
 nnoremap <silent> <Leader>x :lua vim.lsp.buf.code_action()<CR>
 colorscheme gruvbox
-highlight EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
