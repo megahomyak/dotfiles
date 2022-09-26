@@ -7,6 +7,8 @@ set undofile
 nnoremap <silent> <Esc> :noh<CR>
 call plug#begin()
 Plug 'neovim/nvim-lspconfig'
+Plug 'ntpeters/vim-better-whitespace'
+let g:better_whitespace_guicolor='darkred'
 Plug 'morhetz/gruvbox'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
