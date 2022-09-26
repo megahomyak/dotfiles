@@ -8,7 +8,7 @@ set laststatus=0
 set statusline=%F
 set fillchars+=vert:\
 set cmdheight=0
-nnoremap <silent> <C-g> :echo expand("%") . " \| " . line(".") . "/" . line("$")<CR>
+nnoremap <silent> <C-g> :echo expand("%") . (&mod ? " [+]" : "") . " \| " . line(".") . "/" . line("$")<CR>
 nnoremap <silent> <Esc> :noh<CR>
 au ColorScheme * highlight EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 call plug#begin()
