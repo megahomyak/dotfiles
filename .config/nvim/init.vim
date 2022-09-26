@@ -6,7 +6,6 @@ set termguicolors
 set undofile
 set laststatus=0
 set statusline=%F
-set fillchars+=vert:\
 set cmdheight=0
 set shortmess=asIF
 nnoremap <silent> <C-g> :echo expand("%") . (&mod ? " [+]" : "") . " \| " . line(".") . "/" . line("$")<CR>
@@ -20,6 +19,7 @@ Plug 'morhetz/gruvbox'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 call plug#end()
+nnoremap <silent> <Leader>n :Lexplore<CR><CR>
 lua << EOF
 local cmp = require("cmp")
 cmp.setup {
