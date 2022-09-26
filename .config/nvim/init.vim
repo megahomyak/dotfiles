@@ -46,7 +46,7 @@ cmp.setup {
     },
     sources = {{ name = "nvim_lsp" }},
 }
-for _, lsp in ipairs({"pylsp", "dartls", "rust_analyzer", "gopls", "clangd"}) do
+for _, lsp in ipairs({"dartls", "rust_analyzer", "gopls", "clangd"}) do
     require("lspconfig")[lsp].setup{}
 end
 EOF
