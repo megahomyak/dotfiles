@@ -1,4 +1,5 @@
 set expandtab
+set mouse=
 set nowrap
 set shiftwidth=4
 set termguicolors
