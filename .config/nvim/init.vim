@@ -5,6 +5,7 @@ set shiftwidth=4
 au FileType dart set shiftwidth=2
 set termguicolors
 set undofile
+set scl=no
 set laststatus=0
 set statusline=%F
 set cmdheight=0
