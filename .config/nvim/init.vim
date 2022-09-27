@@ -2,6 +2,7 @@ set expandtab
 set mouse=
 set nowrap
 set shiftwidth=4
+au FileType dart set shiftwidth=2
 set termguicolors
 set undofile
 set laststatus=0
