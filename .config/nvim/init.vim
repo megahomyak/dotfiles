@@ -10,6 +10,7 @@ set cmdheight=0
 set shortmess=asIF
 nnoremap <silent> <C-g> :echo expand("%") . (&mod ? " [+]" : "") . " \| " . line(".") . "/" . line("$")<CR>
 nnoremap <silent> <Esc> :noh<CR>
+nnoremap <silent> <Leader>n :Lexplore<CR><CR>
 au ColorScheme * highlight EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 call plug#begin()
 Plug 'neovim/nvim-lspconfig'
@@ -18,8 +19,12 @@ let g:better_whitespace_guicolor='darkred'
 Plug 'morhetz/gruvbox'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'cohama/lexima.vim'
 call plug#end()
-nnoremap <silent> <Leader>n :Lexplore<CR><CR>
+call lexima#add_rule({'char': '<', 'input_after': '>', 'filetype': 'rust'})
+call lexima#add_rule({'char': '>', 'at': '\%#>', 'leave': 1, 'filetype': 'rust'})
+call lexima#add_rule({'char': '<BS>', 'at': '<\%#>', 'delete': 1, 'filetype': 'rust'})
+call lexima#add_rule({'char': "'", 'input_after': '', 'filetype': 'rust'})
 lua << EOF
 local cmp = require("cmp")
 cmp.setup {
