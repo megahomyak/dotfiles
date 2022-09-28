@@ -10,6 +10,7 @@ set laststatus=0
 set statusline=%F
 set cmdheight=0
 set shortmess=asIF
+au BufReadPost * set bufhidden=wipe
 nnoremap <silent> <C-g> :echo expand("%") . (&mod ? " [+]" : "") . " \| " . line(".") . "/" . line("$")<CR>
 nnoremap <silent> <Esc> :noh<CR>
 nnoremap <silent> <Leader>n :Vexplore<CR><CR>
