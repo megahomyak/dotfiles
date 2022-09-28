@@ -11,8 +11,18 @@ set statusline=%F
 set cmdheight=0
 set shortmess=asIF
 au BufReadPost * set bufhidden=wipe
+lua<<EOF
+_G.CloseAllFloatingWindows = function()
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    local config = vim.api.nvim_win_get_config(win)
+    if config.relative ~= "" then  -- is_floating_window?
+      vim.api.nvim_win_close(win, false)  -- do not force
+    end
+  end
+end
+EOF
+nnoremap <silent> <Esc> :noh<CR>:lua _G.CloseAllFloatingWindows()<CR>
 nnoremap <silent> <C-g> :echo expand("%") . (&mod ? " [+]" : "") . " \| " . line(".") . "/" . line("$")<CR>
-nnoremap <silent> <Esc> :noh<CR>
 nnoremap <silent> <Leader>n :Vexplore<CR><CR>
 nnoremap <silent> <Leader>w :w<CR><CR>
 au ColorScheme * highlight EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
