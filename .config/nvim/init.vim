@@ -75,4 +75,8 @@ nnoremap <silent> <Leader>d :lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <Leader>r :lua vim.lsp.buf.rename()<CR>
 nnoremap <silent> <Leader>z :lua vim.lsp.buf.format { async = true }<CR>
 nnoremap <silent> <Leader>x :lua vim.lsp.buf.code_action()<CR>
+nnoremap <silent> <Leader>g <C-w>s:lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> <Leader>t <C-w>s:lua vim.lsp.buf.type_definition()<CR>
+nnoremap <silent> <Leader>i :lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> <Leader>m :lua vim.lsp.buf.references()<CR>
 colorscheme gruvbox
