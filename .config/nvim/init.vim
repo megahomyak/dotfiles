@@ -33,6 +33,7 @@ Plug 'morhetz/gruvbox'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'cohama/lexima.vim'
+Plug 'simrat39/rust-tools.nvim'
 call plug#end()
 call lexima#add_rule({'char': '<', 'input_after': '>', 'filetype': 'rust'})
 call lexima#add_rule({'char': '>', 'at': '\%#>', 'leave': 1, 'filetype': 'rust'})
@@ -67,7 +68,8 @@ cmp.setup {
     },
     sources = {{ name = "nvim_lsp" }},
 }
-for _, lsp in ipairs({"dartls", "rust_analyzer", "gopls", "clangd"}) do
+require("rust-tools").setup({})
+for _, lsp in ipairs({"dartls", "gopls", "clangd"}) do
     require("lspconfig")[lsp].setup{}
 end
 EOF
