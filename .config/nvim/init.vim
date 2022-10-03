@@ -76,6 +76,8 @@ for _, lsp in ipairs({"dartls", "gopls", "clangd"}) do
     require("lspconfig")[lsp].setup{}
 end
 EOF
+imap <expr> <Tab> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<Tab>'
+imap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
 nnoremap <silent> <Leader>e :lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})<CR>
 nnoremap <silent> <Leader>d :lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <Leader>r :lua vim.lsp.buf.rename()<CR>
