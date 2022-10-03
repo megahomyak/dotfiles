@@ -32,6 +32,8 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'morhetz/gruvbox'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
 Plug 'cohama/lexima.vim'
 Plug 'simrat39/rust-tools.nvim'
 call plug#end()
@@ -66,7 +68,8 @@ cmp.setup {
             end
         end,
     },
-    sources = {{ name = "nvim_lsp" }},
+    snippet = { expand = function(args) vim.fn["vsnip#anonymous"](args.body) end },
+    sources = {{ name = "nvim_lsp" }, { name = "vsnip" }},
 }
 require("rust-tools").setup({})
 for _, lsp in ipairs({"dartls", "gopls", "clangd"}) do
