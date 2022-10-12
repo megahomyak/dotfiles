@@ -72,7 +72,7 @@ cmp.setup {
     sources = {{ name = "nvim_lsp" }, { name = "vsnip" }},
 }
 require("rust-tools").setup({})
-for _, lsp in ipairs({"dartls", "gopls", "clangd"}) do
+for _, lsp in ipairs({"dartls", "gopls", "clangd", "pyright"}) do
     require("lspconfig")[lsp].setup{}
 end
 EOF
