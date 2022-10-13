@@ -34,13 +34,8 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
-Plug 'cohama/lexima.vim'
 Plug 'simrat39/rust-tools.nvim'
 call plug#end()
-call lexima#add_rule({'char': '<', 'input_after': '>', 'filetype': 'rust'})
-call lexima#add_rule({'char': '>', 'at': '\%#>', 'leave': 1, 'filetype': 'rust'})
-call lexima#add_rule({'char': '<BS>', 'at': '<\%#>', 'delete': 1, 'filetype': 'rust'})
-call lexima#add_rule({'char': "'", 'input_after': '', 'filetype': 'rust'})
 lua << EOF
 local cmp = require("cmp")
 cmp.setup {
