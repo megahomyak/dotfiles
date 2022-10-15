@@ -26,6 +26,7 @@ nnoremap <silent> <Esc> :noh<CR>:lua _G.CloseAllFloatingWindows()<CR>
 nnoremap <silent> <C-g> :echo expand("%:p") . (&mod ? " [+]" : "") . " \| " . line(".") . "/" . line("$")<CR>
 nnoremap <silent> <Leader>n :Vexplore<CR><CR>
 nnoremap <silent> <Leader>w :w<CR><CR>
+nnoremap <silent> <Leader><Leader> :%s///g<Left><Left><Left>
 au ColorScheme * highlight EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 call plug#begin()
 Plug 'neovim/nvim-lspconfig'
