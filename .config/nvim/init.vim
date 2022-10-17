@@ -2,12 +2,11 @@ set expandtab
 set mouse=
 set nowrap
 set shiftwidth=4
-au FileType dart set shiftwidth=2
+au FileType dart setlocal shiftwidth=2
 set termguicolors
 set undofile
 set scl=no
-set laststatus=0
-set statusline=%F
+set statusline=%F\ %m
 set shortmess=asIFTWc
 let g:netrw_banner=0
 au BufReadPost * set bufhidden=wipe
@@ -24,7 +23,7 @@ EOF
 nnoremap <silent> <Esc> :noh<CR>:lua _G.CloseAllFloatingWindows()<CR>
 nnoremap <silent> <C-g> :echo expand("%:p") . (&mod ? " [+]" : "") . " \| " . line(".") . "/" . line("$")<CR>
 nnoremap <silent> <Leader>n :Vexplore<CR><CR>
-nnoremap <silent> <Leader>w :w<CR><CR>
+nnoremap <silent> <Leader>w :w<CR>
 nnoremap <silent> <Leader><Leader> :%s///g<Left><Left><Left>
 au ColorScheme * highlight EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 call plug#begin()
