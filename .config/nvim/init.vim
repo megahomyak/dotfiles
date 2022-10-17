@@ -8,7 +8,6 @@ set undofile
 set scl=no
 set laststatus=0
 set statusline=%F
-set cmdheight=0
 set shortmess=asIF
 let g:netrw_banner=0
 au BufReadPost * set bufhidden=wipe
