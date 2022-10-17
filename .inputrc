@@ -5,3 +5,6 @@ $include /etc/inputrc
 "\e[A":history-search-backward
 ## arrow down
 "\e[B":history-search-forward
+
+# Adequate completion
+TAB: menu-complete
