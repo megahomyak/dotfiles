@@ -8,7 +8,7 @@ set undofile
 set scl=no
 set laststatus=0
 set statusline=%F
-set shortmess=asIF
+set shortmess=asIFTWc
 let g:netrw_banner=0
 au BufReadPost * set bufhidden=wipe
 lua<<EOF
