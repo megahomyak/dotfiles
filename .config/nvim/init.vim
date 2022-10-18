@@ -1,5 +1,4 @@
 set expandtab
-set nowrap
 set shiftwidth=4
 au FileType dart setlocal shiftwidth=2
 set termguicolors
@@ -19,6 +18,7 @@ _G.CloseAllFloatingWindows = function()
   end
 end
 EOF
+nnoremap <silent> <Esc> :lua _G.CloseAllFloatingWindows()<CR>
 call plug#begin()
 Plug 'neovim/nvim-lspconfig'
 Plug 'morhetz/gruvbox'
