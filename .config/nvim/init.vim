@@ -57,6 +57,7 @@ cmp.setup {
     },
     snippet = { expand = function(args) vim.fn["vsnip#anonymous"](args.body) end },
     sources = {{ name = "nvim_lsp" }, { name = "vsnip" }},
+    preselect = cmp.PreselectMode.None,
 }
 require("rust-tools").setup({})
 for _, lsp in ipairs({"dartls", "gopls", "clangd", "pyright"}) do
