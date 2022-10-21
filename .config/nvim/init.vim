@@ -7,6 +7,7 @@ set scl=no
 set statusline=%F\ %m
 set shortmess=asIFTWc
 let g:netrw_banner=0
+let g:netrw_localrmdir='rm -r'
 au BufReadPost * set bufhidden=wipe
 lua<<EOF
 _G.CloseAllFloatingWindows = function()
