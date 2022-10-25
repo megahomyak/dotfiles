@@ -1,8 +1,12 @@
 mkdir -p ~/.config/nvim/
 ln -rs .config/nvim/init.vim ~/.config/nvim/init.vim
+
 mkdir -p ~/.cargo/
 ln -rs .cargo/config.toml ~/.cargo/config.toml
+
 ln -rs .bash_utils ~/.bash_utils
+
 mkdir ~/.termux
-ln -rs .bash_utils ~/.bash_utils
+ln -rs .termux/termux.properties ~/.termux/termux.properties
+
 ln -rs .inputrc ~/.inputrc
