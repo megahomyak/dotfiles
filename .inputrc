@@ -8,3 +8,4 @@ $include /etc/inputrc
 
 # Adequate completion
 TAB: menu-complete
+"\e[Z": menu-complete-backward
