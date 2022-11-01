@@ -1,12 +1,11 @@
-mkdir -p ~/.config/nvim/
-ln -rs .config/nvim/init.vim ~/.config/nvim/init.vim
+link() {
+    rm ~/$1/$2 2> /dev/null
+    mkdir -p ~/$1
+    ln -rs $1/$2 ~/$1/$2
+}
 
-mkdir -p ~/.cargo/
-ln -rs .cargo/config.toml ~/.cargo/config.toml
-
-ln -rs .bash_utils ~/.bash_utils
-
-mkdir ~/.termux
-ln -rs .termux/termux.properties ~/.termux/termux.properties
-
-ln -rs .inputrc ~/.inputrc
+link .config/nvim init.vim
+link .cargo config.toml
+link . .bash_utils
+link .termux termux.properties
+link . .inputrc
