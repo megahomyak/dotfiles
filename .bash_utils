@@ -6,4 +6,3 @@ detach() {
     disown -h %%
 }
 shopt -s expand_aliases
-cd ~/i
