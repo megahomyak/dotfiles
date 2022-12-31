@@ -6,6 +6,6 @@ detach() {
     disown -h %%
 }
 shopt -s expand_aliases
-alias gc="git add --all ; git commit"
+alias gc="git add --all && git commit"
 alias gp="git push"
-alias gcp="gc ; gp"
+alias gcp="gc && gp"
