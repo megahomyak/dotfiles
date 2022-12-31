@@ -7,3 +7,5 @@ detach() {
 }
 shopt -s expand_aliases
 alias gc="git add --all ; git commit"
+alias gp="git push"
+alias gcp="gc ; gp"
