@@ -26,7 +26,6 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
-Plug 'simrat39/rust-tools.nvim'
 call plug#end()
 lua << EOF
 local cmp = require("cmp")
@@ -59,8 +58,7 @@ cmp.setup {
     sources = {{ name = "nvim_lsp" }, { name = "vsnip" }},
     preselect = cmp.PreselectMode.None,
 }
-require("rust-tools").setup({})
-for _, lsp in ipairs({"dartls", "gopls", "clangd", "pyright"}) do
+for _, lsp in ipairs({"dartls", "gopls", "clangd", "pyright", "rust_analyzer"}) do
     require("lspconfig")[lsp].setup{}
 end
 EOF
