@@ -57,7 +57,7 @@ cmp.setup {
     sources = {{ name = "nvim_lsp" }, { name = "vsnip" }},
     preselect = cmp.PreselectMode.None,
 }
-for _, lsp in ipairs({"dartls", "gopls", "clangd", "pyright", "rust_analyzer"}) do
+for _, lsp in ipairs({"dartls", "gopls", "clangd", "pyright", "rust_analyzer", "tsserver"}) do
     require("lspconfig")[lsp].setup{}
 end
 EOF
