@@ -18,49 +18,55 @@ _G.CloseAllFloatingWindows = function()
 end
 EOF
 nnoremap <silent> <Esc> :lua _G.CloseAllFloatingWindows()<CR>
+let do_not_lag_please = 1
 call plug#begin()
-Plug 'neovim/nvim-lspconfig'
 Plug 'morhetz/gruvbox'
+if !do_not_lag_please
+Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
+Plug 'megahomyak/vim-nxml'
+endif
 call plug#end()
-lua << EOF
-local cmp = require("cmp")
-cmp.setup {
-    mapping = {
-        ['<C-f>'] = cmp.mapping.scroll_docs(1), -- "forward"
-        ['<C-b>'] = cmp.mapping.scroll_docs(-1), -- "back"
-        ['<A-c>'] = cmp.mapping.complete(),
-        ['<C-c>'] = cmp.mapping.close(),
-        ['<CR>'] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
+if !do_not_lag_please
+    lua << EOF
+    for _, lsp in ipairs({"dartls", "gopls", "clangd", "pyright", "rust_analyzer", "tsserver"}) do
+        require("lspconfig")[lsp].setup{}
+    end
+    local cmp = require("cmp")
+    cmp.setup {
+        mapping = {
+            ['<C-f>'] = cmp.mapping.scroll_docs(1), -- "forward"
+            ['<C-b>'] = cmp.mapping.scroll_docs(-1), -- "back"
+            ['<A-c>'] = cmp.mapping.complete(),
+            ['<C-c>'] = cmp.mapping.close(),
+            ['<CR>'] = cmp.mapping.confirm {
+                behavior = cmp.ConfirmBehavior.Replace,
+                select = true,
+            },
+            ['<Tab>'] = function(fallback)
+                if cmp.visible() then
+                    cmp.select_next_item()
+                else
+                    fallback()
+                end
+            end,
+            ['<S-Tab>'] = function(fallback)
+                if cmp.visible() then
+                    cmp.select_prev_item()
+                else
+                    fallback()
+                end
+            end,
         },
-        ['<Tab>'] = function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            else
-                fallback()
-            end
-        end,
-        ['<S-Tab>'] = function(fallback)
-            if cmp.visible() then
-                cmp.select_prev_item()
-            else
-                fallback()
-            end
-        end,
-    },
-    snippet = { expand = function(args) vim.fn["vsnip#anonymous"](args.body) end },
-    sources = {{ name = "nvim_lsp" }, { name = "vsnip" }},
-    preselect = cmp.PreselectMode.None,
-}
-for _, lsp in ipairs({"dartls", "gopls", "clangd", "pyright", "rust_analyzer", "tsserver"}) do
-    require("lspconfig")[lsp].setup{}
-end
+        snippet = { expand = function(args) vim.fn["vsnip#anonymous"](args.body) end },
+        sources = {{ name = "nvim_lsp" }, { name = "vsnip" }},
+        preselect = cmp.PreselectMode.None,
+    }
 EOF
+endif
 imap <expr> <Tab> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<Tab>'
 imap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
 nnoremap <silent> <Leader>e :lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})<CR>
