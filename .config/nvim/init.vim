@@ -23,11 +23,11 @@ call plug#begin()
 Plug 'morhetz/gruvbox'
 Plug 'megahomyak/vim-nxml'
 if !do_not_lag_please
-Plug 'neovim/nvim-lspconfig'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'hrsh7th/cmp-nvim-lsp'
+    Plug 'hrsh7th/cmp-vsnip'
+    Plug 'hrsh7th/vim-vsnip'
 endif
 call plug#end()
 if !do_not_lag_please
@@ -67,8 +67,10 @@ if !do_not_lag_please
     }
 EOF
 endif
-imap <expr> <Tab> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<Tab>'
-imap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
+if !do_not_lag_please
+    imap <expr> <Tab> vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<Tab>'
+    imap <expr> <S-Tab> vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'
+end
 nnoremap <silent> <Leader>e :lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})<CR>
 nnoremap <silent> <Leader>d :lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <Leader>r :lua vim.lsp.buf.rename()<CR>
