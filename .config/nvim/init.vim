@@ -18,7 +18,7 @@ _G.CloseAllFloatingWindows = function()
 end
 EOF
 nnoremap <silent> <Esc> :lua _G.CloseAllFloatingWindows()<CR>
-let do_not_lag_please = 1
+let do_not_lag_please = 0
 call plug#begin()
 Plug 'morhetz/gruvbox'
 Plug 'megahomyak/vim-nxml'
@@ -32,9 +32,18 @@ endif
 call plug#end()
 if !do_not_lag_please
     lua << EOF
-    for _, lsp in ipairs({"dartls", "gopls", "clangd", "pyright", "rust_analyzer", "tsserver"}) do
+    for _, lsp in ipairs({"dartls", "gopls", "clangd", "tsserver"}) do
         require("lspconfig")[lsp].setup{}
     end
+    require'lspconfig'.rust_analyzer.setup{
+    settings = {
+      ["rust-analyzer"] = {
+        cargo = {
+          allFeatures = true
+        }
+      }
+    }
+  }
     local cmp = require("cmp")
     cmp.setup {
         mapping = {
