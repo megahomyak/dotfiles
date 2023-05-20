@@ -21,12 +21,23 @@ nnoremap <silent> <Esc> :lua _G.CloseAllFloatingWindows()<CR>
 let do_not_lag_please = 0
 call plug#begin()
 Plug 'morhetz/gruvbox'
+
 Plug 'megahomyak/vim-nxml'
+
+Plug 'easymotion/vim-easymotion'
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_smartcase = 1
+nmap <Space> <Plug>(easymotion-overwin-f)
+
 if !do_not_lag_please
     Plug 'neovim/nvim-lspconfig'
+
     Plug 'hrsh7th/nvim-cmp'
+
     Plug 'hrsh7th/cmp-nvim-lsp'
+
     Plug 'hrsh7th/cmp-vsnip'
+
     Plug 'hrsh7th/vim-vsnip'
 endif
 call plug#end()
