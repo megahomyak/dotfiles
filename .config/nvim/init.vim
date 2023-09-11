@@ -34,6 +34,9 @@ nmap <Space> <Plug>(easymotion-overwin-f)
 set langmap=йцукенгшщзхъ;qwfpgjluy\;[]
 set langmap+=фывапролджэ;arstdhneio'
 set langmap+=ячсмитьбю.;zxcvbkm\\,./
+set langmap+=ЙЦУКЕНГШЩЗХЪ;QWFPGJLUY:{}
+set langmap+=ФЫВАПРОЛДЖЭ;ARSTDHNEIO\"
+set langmap+=ЯЧСМИТЬБЮ\\,;ZXCVBKM<>?
 
 if !do_not_lag_please
     Plug 'neovim/nvim-lspconfig'
