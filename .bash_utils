@@ -11,3 +11,6 @@ alias gp="git push"
 alias gcp="gc && gp"
 alias gs="git status"
 alias hint="chatgpt cmd"
+
+HISTSIZE = 30000
+HISTFILESIZE = 30000
