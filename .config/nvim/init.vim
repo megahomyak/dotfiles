@@ -25,9 +25,15 @@ Plug 'morhetz/gruvbox'
 Plug 'megahomyak/vim-nxml'
 
 Plug 'easymotion/vim-easymotion'
+
+Plug 'tpope/vim-fugitive'
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
 nmap <Space> <Plug>(easymotion-overwin-f)
+
+set langmap=йцукенгшщзхъ;qwfpgjluy\;[]
+set langmap+=фывапролджэ;arstdhneio'
+set langmap+=ячсмитьбю.;zxcvbkm\\,./
 
 if !do_not_lag_please
     Plug 'neovim/nvim-lspconfig'
@@ -43,7 +49,7 @@ endif
 call plug#end()
 if !do_not_lag_please
     lua << EOF
-    for _, lsp in ipairs({"dartls", "gopls", "clangd", "tsserver"}) do
+    for _, lsp in ipairs({"dartls", "gopls", "clangd", "tsserver", "pyright"}) do
         require("lspconfig")[lsp].setup{}
     end
     require'lspconfig'.rust_analyzer.setup{
