@@ -15,4 +15,4 @@ alias hint="chatgpt cmd"
 HISTSIZE=30000
 HISTFILESIZE=30000
 
-cpf() { cp ~/i/copypastefiles/$@ .; }
+cpf() { cp -r ~/i/copypastefiles/$@ .; }
