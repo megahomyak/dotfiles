@@ -64,6 +64,7 @@ if !do_not_lag_please
       }
     }
   }
+
     local cmp = require("cmp")
     cmp.setup {
         mapping = {
