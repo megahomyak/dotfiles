@@ -1,0 +1,11 @@
+[user]
+	email = g.megahomyak@gmail.com
+	name = megahomyak
+[core]
+	editor = nvim
+	quotepath = off
+[alias]
+	adog = log --all --decorate --oneline --graph
+[pull]
+	rebase = true
+	merge = false

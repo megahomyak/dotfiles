@@ -9,6 +9,7 @@ link .cargo config.toml
 link . .bash_utils
 link .termux termux.properties
 link . .inputrc
+link . .gitconfig
 
 FIREFOX_PATH="$(python get_firefox_default_profile_path.py)"
 FIREFOX_CHROME_PROFILE_FILE_NAME='userChrome.css'
