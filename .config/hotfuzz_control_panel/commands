@@ -1,0 +1,35 @@
+Copy Shrug
+>echo -n "¯\_(ツ)_/¯" | xclip -selection clipboard &
+
+COMmands EDIT
+>terminator -x nvim ~/.config/hotfuzz_control_panel/commands &
+
+SQuareIFY
+>python - << EOF
+>from PIL import Image, ImageGrab
+>import subprocess
+>from io import BytesIO
+>
+>def make_square(im, fill_color=(0, 0, 0, 255)):
+>    x, y = im.size
+>    side = max(x, y)
+>    new_im = Image.new('RGBA', (side, side), fill_color)
+>    new_im.paste(im, (int((side - x) / 2), int((side - y) / 2)))
+>    return new_im
+>
+>def copy_to_clipboard(type_, bytes_):
+>    output = subprocess.Popen(
+>        ("xclip", "-selection", "clipboard", "-t", type_, "-i"),
+>        stdin=subprocess.PIPE,
+>    )
+>    output.stdin.write(bytes_)
+>    output.stdin.close()
+>    output.wait()
+>
+>source = ImageGrab.grabclipboard()
+>result = make_square(source)
+>buffer = BytesIO()
+>result.save(buffer, format="png")
+>buffer.seek(0)
+>copy_to_clipboard("image/png", buffer.getvalue())
+>EOF
