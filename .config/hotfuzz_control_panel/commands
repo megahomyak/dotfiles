@@ -10,7 +10,7 @@ SQuareIFY
 >import subprocess
 >from io import BytesIO
 >
->def make_square(im, fill_color=(0, 0, 0, 255)):
+>def make_square(im, fill_color=(0, 0, 0, 0)):
 >    x, y = im.size
 >    side = max(x, y)
 >    new_im = Image.new('RGBA', (side, side), fill_color)
