@@ -4,7 +4,10 @@ Copy Shrug
 COMmands EDIT
 >terminator -x nvim ~/.config/hotfuzz_control_panel/commands &
 
-SQuareIFY
+PUSH COMmands
+>terminator -x bash -c "cd ~/i/dotfiles && git add --all && git commit && git push --all"
+
+SQUareIFY
 >python - << EOF
 >from PIL import Image, ImageGrab
 >import subprocess
