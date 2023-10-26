@@ -36,3 +36,9 @@ SQUareIFY
 >buffer.seek(0)
 >copy_to_clipboard("image/png", buffer.getvalue())
 >EOF
+
+Temp-Mail
+>firefox --new-tab --url https://temp-mail.org/en/
+
+Download by Clipboard url
+>xclip -out -selection clipboard | xargs wget -P ~/Downloads
