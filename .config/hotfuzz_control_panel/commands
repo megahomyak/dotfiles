@@ -42,3 +42,10 @@ Temp-Mail
 
 Download by Clipboard url
 >xclip -out -selection clipboard | xargs wget -P ~/Downloads
+
+MineCraft
+>cd ~/TESLauncher
+>java -jar target/TESLauncher-0.1.2.jar &
+
+Emote picker
+>/snap/bin/emote
