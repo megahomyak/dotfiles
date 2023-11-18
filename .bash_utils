@@ -16,3 +16,12 @@ HISTSIZE=30000
 HISTFILESIZE=30000
 
 cpf() { cp -r ~/i/copypastefiles/$@ .; }
+
+proxyon() {
+    source ~/proxies.sh
+}
+
+proxyoff() {
+    export http_proxy=
+    export https_proxy=
+}
