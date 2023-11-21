@@ -1,11 +1,45 @@
 Copy Shrug
 >echo -n "¯\_(ツ)_/¯" | xclip -selection clipboard &
 
-EDIT COMmands
+COMmands EDIT
 >terminator -x nvim ~/.config/hotfuzz_control_panel/commands &
 
-PUSH COMmands
+COMmands PUSH
 >terminator -x bash -c "cd ~/i/dotfiles && git add --all && git commit && git push --all"
+
+PY2C
+>. ~/proxies.sh
+>python3.10 - << EOF
+>from openai import OpenAI
+>import os
+>import subprocess
+>with open("/home/megahomyak/.config/chatgpt_cli/openai_token.txt") as f:
+>    client = OpenAI(api_key=f.read().strip())
+>with open("/tmp/pycode.py", "w"):
+>    pass
+>os.system("terminator -x nvim /tmp/pycode.py")
+>with open("/tmp/pycode.py", encoding="utf-8") as f:
+>    code = f.read()
+>
+>def copy_to_clipboard(text):
+>    output = subprocess.Popen(
+>        ("xclip", "-selection", "clipboard", "-t", "text/plain", "-i"),
+>        stdin=subprocess.PIPE,
+>    )
+>    output.stdin.write(text.encode("utf-8"))
+>    output.stdin.close()
+>    output.wait()
+>
+>completions = client.chat.completions.create(
+>    messages=[
+>        {
+>            "role": "user",
+>            "content": f"Translate the following code to C. Respond only with plain code, no codeblocks, comments or anything like that. It must be a full program that will compile on its own. The code that needs to be translated:\n\n{code}"
+>        }
+>    ],
+>    model="gpt-3.5-turbo"
+>)
+>copy_to_clipboard(completions.choices[0].message.content)
 
 SQUareIFY
 >python - << EOF
