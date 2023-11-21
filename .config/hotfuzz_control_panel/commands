@@ -30,6 +30,8 @@ PY2C
 >    output.stdin.close()
 >    output.wait()
 >
+>copy_to_clipboard(code)
+>
 >completions = client.chat.completions.create(
 >    messages=[
 >        {
@@ -40,6 +42,8 @@ PY2C
 >    model="gpt-3.5-turbo"
 >)
 >copy_to_clipboard(completions.choices[0].message.content)
+>EOF
+>notify-send "done"
 
 SQUareIFY
 >python - << EOF
