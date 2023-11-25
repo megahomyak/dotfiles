@@ -1,2 +1,5 @@
 [build]
 target-dir = "rustc_target"
+
+[net]
+net.git-fetch-with-cli = true
