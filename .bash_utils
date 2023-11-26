@@ -17,6 +17,8 @@ HISTFILESIZE=30000
 
 cpf() { cp -r ~/i/copypastefiles/$@ .; }
 
+alias pybot="cpf python/pybot/*"
+
 proxy() {
     bash --rcfile <(echo 'source ~/.bashrc; source ~/proxies.sh; PS1="(proxied) $PS1"')
 }
