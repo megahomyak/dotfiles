@@ -9,3 +9,5 @@
 [pull]
 	rebase = true
 	merge = false
+[init]
+	defaultBranch = master
