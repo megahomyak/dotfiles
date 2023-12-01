@@ -111,3 +111,6 @@ nnoremap <silent> <Leader>t <C-w>s:lua vim.lsp.buf.type_definition()<CR>
 nnoremap <silent> <Leader>i :lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> <Leader>m :lua vim.lsp.buf.references()<CR>
 colorscheme gruvbox
+
+nnoremap k gk
+nnoremap j gj
