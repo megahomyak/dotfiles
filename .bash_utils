@@ -1,5 +1,4 @@
 alias superclippy="cargo clippy -- -W clippy::pedantic -W clippy::nursery -W clippy::all"
-c() { cd "$@" && ls; }
 alias rand="ls | shuf -n 1"
 detach() {
     "$@" &
@@ -25,7 +24,12 @@ proxy() {
 
 source ~/i/automation/shortcuts.sh
 
-o() {
+c() {
+    if [[ -d "$1" ]]; then
+        cd "$1"
+        ls
+        return
+    fi
     for extension in sh py c cpp cxx txt toml cson json yaml
     do
         if [[ "$1" == *."$extension" ]]; then
