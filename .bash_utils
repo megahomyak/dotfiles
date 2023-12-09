@@ -24,6 +24,10 @@ proxy() {
 
 source ~/i/automation/shortcuts.sh
 
+o() {
+    mimetype -d "$1"
+}
+
 c() {
     if [[ -d "$1" ]]; then
         cd "$1"
@@ -37,11 +41,19 @@ c() {
             return
         fi
     done
-    for extension in png jpeg jpg bmp svg
+    for extension in png jpeg jpg bmp
     do
         if [[ "$1" == *."$extension" ]]; then
-            xdg-open "$1"
+            xviewer "$1"
             return
         fi
     done
+    for extension in svg
+    do
+        if [[ "$1" == *."$extension" ]]; then
+            inkscape "$1"
+            return
+        fi
+    done
+    o "$1"
 }
