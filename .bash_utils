@@ -24,3 +24,20 @@ proxy() {
 }
 
 source ~/i/automation/shortcuts.sh
+
+o() {
+    for extension in sh py c cpp cxx txt toml cson json yaml
+    do
+        if [[ "$1" == *."$extension" ]]; then
+            nvim "$1"
+            return
+        fi
+    done
+    for extension in png jpeg jpg bmp svg
+    do
+        if [[ "$1" == *."$extension" ]]; then
+            xdg-open "$1"
+            return
+        fi
+    done
+}
