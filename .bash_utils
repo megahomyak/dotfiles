@@ -29,7 +29,7 @@ o() {
 }
 
 c() {
-    if [[ -d "$1" ]]; then
+    if [[ -d "$1" || "$1" == "-" ]]; then
         cd "$1"
         ls
         return
