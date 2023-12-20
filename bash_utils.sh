@@ -18,7 +18,7 @@ cpf() { cp -r ~/i/copypastefiles/$@ .; }
 
 alias pybot="cpf python/pybot/."
 
-proxy() {
+shell_proxy() {
     bash --rcfile <(echo 'source ~/.bashrc; source ~/proxies.sh; PS1="(proxied) $PS1"')
 }
 
@@ -57,3 +57,6 @@ c() {
     done
     o "$1"
 }
+
+alias vpn="sudo sing-box run -D ~/.config/sing-box/vpn"
+alias proxy="sudo sing-box run -D ~/.config/sing-box/proxy"

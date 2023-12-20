@@ -7,7 +7,7 @@ link() {
 link .config/nvim init.vim
 link .config/hotfuzz_control_panel commands
 link .cargo config.toml
-link . .bash_utils
+link . bash_utils.sh
 link .termux termux.properties
 link . .inputrc
 link . .gitconfig
