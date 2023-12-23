@@ -11,13 +11,17 @@ alias gcp="gc && gp"
 alias gs="git status"
 
 hint() {
+    (
     source ~/proxies.sh
     chatgpt cmd
+    )
 }
 
 chat() {
+    (
     source ~/proxies.sh
     chatgpt
+    )
 }
 
 HISTSIZE=30000
