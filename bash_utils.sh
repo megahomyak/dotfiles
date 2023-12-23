@@ -9,7 +9,16 @@ alias gc="git add --all && git commit"
 alias gp="git push --all"
 alias gcp="gc && gp"
 alias gs="git status"
-alias hint="chatgpt cmd"
+
+hint() {
+    source ~/proxies.sh
+    chatgpt cmd
+}
+
+chat() {
+    source ~/proxies.sh
+    chatgpt
+}
 
 HISTSIZE=30000
 HISTFILESIZE=30000
