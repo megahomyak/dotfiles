@@ -47,7 +47,7 @@ c() {
         ls
         return
     fi
-    for extension in sh py c cpp cxx txt toml cson json yaml
+    for extension in sh py c cpp cxx txt toml cson json yaml rs
     do
         if [[ "$1" == *."$extension" ]]; then
             nvim "$1"
