@@ -41,6 +41,11 @@ o() {
     mimetype -d "$1"
 }
 
+push() {
+    cd ~/i/"$1"
+    gcp
+}
+
 c() {
     if [[ -d "$1" || "$1" == "-" ]]; then
         cd "$1"
