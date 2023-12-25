@@ -114,5 +114,5 @@ colorscheme gruvbox
 
 nnoremap k gk
 nnoremap j gj
-vnoremap k gk
-vnoremap j gj
+xnoremap <expr> j mode() ==# 'V' ? 'j' : 'gj'
+xnoremap <expr> k mode() ==# 'V' ? 'k' : 'gk'
