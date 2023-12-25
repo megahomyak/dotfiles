@@ -104,7 +104,7 @@ end
 nnoremap <silent> <Leader>e :lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})<CR>
 nnoremap <silent> <Leader>d :lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> <Leader>r :lua vim.lsp.buf.rename()<CR>
-nnoremap <silent> <Leader>z :lua vim.lsp.buf.formatting { async = true }<CR>
+nnoremap <silent> <Leader>z :lua vim.lsp.buf.format()<CR>
 nnoremap <silent> <Leader>x :lua vim.lsp.buf.code_action()<CR>
 nnoremap <silent> <Leader>g <C-w>s:lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> <Leader>t <C-w>s:lua vim.lsp.buf.type_definition()<CR>
