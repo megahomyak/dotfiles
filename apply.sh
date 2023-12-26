@@ -11,6 +11,7 @@ link . bash_utils.sh
 link .termux termux.properties
 link . .inputrc
 link . .gitconfig
+link . .config/kitty/kitty.conf
 
 if FIREFOX_PATH="$(python get_firefox_default_profile_path.py)" ; then
     FIREFOX_CHROME_PROFILE_FILE_NAME='userChrome.css'
