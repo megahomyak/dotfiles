@@ -24,8 +24,8 @@ chat() {
     )
 }
 
-HISTSIZE=30000
-HISTFILESIZE=30000
+HISTSIZE=300000
+HISTFILESIZE=300000
 
 cpf() { cp -r ~/i/copypastefiles/$@ .; }
 
@@ -45,6 +45,20 @@ push() {
     (
     cd ~/i/"$1"
     gcp
+    )
+}
+
+pull() {
+    (
+    cd ~/i/"$1"
+    git pull
+    )
+}
+
+refresh() {
+    (
+    pull dotfiles
+    source ~/.bashrc
     )
 }
 
