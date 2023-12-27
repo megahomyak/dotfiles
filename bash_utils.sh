@@ -38,7 +38,11 @@ shell_proxy() {
 source ~/i/automation/shortcuts.sh
 
 o() {
-    xdg-open "$1"
+    if [[ -e "$1" ]]; then
+        xdg-open "$1"
+    else
+        echo "This file does not exist"
+    fi
 }
 
 push() {
