@@ -56,10 +56,7 @@ pull() {
 }
 
 refresh() {
-    (
-    pull dotfiles
     source ~/.bashrc
-    )
 }
 
 c() {
