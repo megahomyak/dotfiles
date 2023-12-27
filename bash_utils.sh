@@ -94,3 +94,5 @@ c() {
 
 alias vpn="sudo sing-box run -D ~/.config/sing-box/vpn"
 alias proxy="sudo sing-box run -D ~/.config/sing-box/proxy"
+
+export EDITOR="nvim"
