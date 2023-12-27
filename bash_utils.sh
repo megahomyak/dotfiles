@@ -38,19 +38,19 @@ shell_proxy() {
 source ~/i/automation/shortcuts.sh
 
 o() {
-    mimetype -d "$1"
+    xdg-open "$1"
 }
 
 push() {
     (
-    cd ~/i/"$1"
+    cd ~/i/"$1" &&
     gcp
     )
 }
 
 pull() {
     (
-    cd ~/i/"$1"
+    cd ~/i/"$1" &&
     git pull
     )
 }
@@ -93,3 +93,4 @@ alias vpn="sudo sing-box run -D ~/.config/sing-box/vpn"
 alias proxy="sudo sing-box run -D ~/.config/sing-box/proxy"
 
 export EDITOR="nvim"
+export PS1="\e[37m\t\e[0m \e[1;32m\u\e[0m:\e[1;34m\w\e[0m\$ "
