@@ -97,6 +97,11 @@ export EDITOR="nvim"
 export PS1="\e[37m\t\e[0m \e[1;32m\u\e[0m:\e[1;34m\w\e[0m\$ "
 
 switch() {
+    # globalvpnthing: sing-box config from the VPN provider with TUN
+    # vpnthing: sing-box config from the VPN provider without TUN (I removed it manually)
+    # proxything: sing-box HTTP in+out only (written manually)
+    # passthroughthing: sing-box HTTP in+out only, passthrough, accepts from localhost and releases from localhost (written manually)
+
     #[Unit]
     #
     #[Service]
@@ -119,8 +124,9 @@ fi
 if [ "\$service_to_run" = "proxy" ]; then
     service_to_run="proxything"
 fi
-if [ "\$service_to_run" != "off" ]; then
-    systemctl start "\$service_to_run"
+if [ "\$service_to_run" == "off" ]; then
+    service_to_run="passthroughthing"
 fi
+systemctl start "\$service_to_run"
 EOF
 }
