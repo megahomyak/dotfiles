@@ -110,7 +110,7 @@ switch() {
     do
         if (systemctl --quiet is-active "$service_name"); then
             systemctl stop "$service_name"
-        do
+        fi
     done
     service_to_run="$1"
     if [ "$service_to_run" = "vpn" ]; then
