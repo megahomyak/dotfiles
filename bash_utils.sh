@@ -102,14 +102,23 @@ switch() {
     #[Service]
     #User=root
     #ExecStart=/usr/bin/sing-box run -D /home/megahomyak/.config/sing-box/[CONFIG NAME HERE]
-    #ExecStartPre=bash -c "echo '[SERVICE NAME HERE]' > /home/megahomyak/.running_service"
     #
     #[Install]
     #WantedBy=multi-user.target
     (
-    service_to_run="$1" &&
-    running_service="$(cat /home/megahomyak/.running_service)" &&
-    systemctl stop "$running_service" &&
+    for service_name in proxything vpnthing
+    do
+        if (systemctl --quiet is-active "$service_name"); then
+            systemctl stop "$service_name"
+        do
+    done
+    service_to_run="$1"
+    if [ "$service_to_run" = "vpn" ]; then
+        service_to_run="vpnthing"
+    fi
+    if [ "$service_to_run" = "proxy" ]; then
+        service_to_run="proxything"
+    fi
     systemctl start "$service_to_run"
     )
 }
