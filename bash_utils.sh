@@ -108,15 +108,15 @@ switch() {
 sudo -s -- <<EOF
 for service_name in proxything vpnthing
 do
-    if (systemctl --quiet is-active "$service_name"); then
-        systemctl stop "$service_name"
+    if (systemctl --quiet is-active "\$service_name"); then
+        systemctl stop "\$service_name"
     fi
 done
 service_to_run="$1"
-if [ "$service_to_run" = "vpn" ]; then
+if [ "\$service_to_run" = "vpn" ]; then
     service_to_run="vpnthing"
 fi
-if [ "$service_to_run" = "proxy" ]; then
+if [ "\$service_to_run" = "proxy" ]; then
     service_to_run="proxything"
 fi
 systemctl start "$service_to_run"
