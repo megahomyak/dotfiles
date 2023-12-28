@@ -98,7 +98,7 @@ export PS1="\e[37m\t\e[0m \e[1;32m\u\e[0m:\e[1;34m\w\e[0m\$ "
 
 switch() {
     # vpn: sing-box config from the VPN provider with TUN
-    # nonglobal_vpn: sing-box config from the VPN provider without TUN (I removed it manually)
+    # nonglobal_vpn: sing-box config from the VPN provider without TUN (I removed TUN manually)
     # proxy: sing-box HTTP in+out only (written manually)
     # off: sing-box HTTP in+out only, passthrough, accepts from localhost and releases from localhost (written manually)
 
@@ -107,12 +107,14 @@ switch() {
     #[Service]
     #User=root
     #EnvironmentFile=/etc/.current_proxy
-    #ExecStart=/usr/bin/sing-box run -D /home/megahomyak/.config/sing-box/$CONFIG_NAME
+    #ExecStart=/usr/bin/sing-box run -D /home/megahomyak/.config/sing-box/${CONFIG_NAME}
     #
     #[Install]
     #WantedBy=multi-user.target
     sudo bash << EOF
 echo "CONFIG_NAME=$1" > /etc/.current_proxy
-systemctl start proxy
+systemctl restart proxy
 EOF
 }
+
+alias orange="ssh -T orange"
