@@ -93,8 +93,23 @@ c() {
     o "$1"
 }
 
-alias vpn="sudo sing-box run -D ~/.config/sing-box/vpn"
-alias proxy="sudo sing-box run -D ~/.config/sing-box/proxy"
-
 export EDITOR="nvim"
 export PS1="\e[37m\t\e[0m \e[1;32m\u\e[0m:\e[1;34m\w\e[0m\$ "
+
+switch() {
+    #[Unit]
+    #
+    #[Service]
+    #User=root
+    #ExecStart=/usr/bin/sing-box run -D /home/megahomyak/.config/sing-box/[CONFIG NAME HERE]
+    #ExecStartPre=bash -c "echo '[SERVICE NAME HERE]' > /home/megahomyak/.running_service"
+    #
+    #[Install]
+    #WantedBy=multi-user.target
+    (
+    service_to_run="$1" &&
+    running_service="$(cat /home/megahomyak/.running_service)" &&
+    systemctl stop "$running_service" &&
+    systemctl start "$service_to_run"
+    )
+}
