@@ -105,7 +105,7 @@ switch() {
     #
     #[Install]
     #WantedBy=multi-user.target
-sudo -s -- <<EOF
+    sudo bash << EOF
 for service_name in proxything vpnthing
 do
     if (systemctl --quiet is-active "\$service_name"); then
@@ -119,6 +119,8 @@ fi
 if [ "\$service_to_run" = "proxy" ]; then
     service_to_run="proxything"
 fi
-systemctl start "$service_to_run"
+if [ "\$service_to_run" != "off" ]; then
+    systemctl start "\$service_to_run"
+fi
 EOF
 }
