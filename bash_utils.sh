@@ -97,36 +97,22 @@ export EDITOR="nvim"
 export PS1="\e[37m\t\e[0m \e[1;32m\u\e[0m:\e[1;34m\w\e[0m\$ "
 
 switch() {
-    # globalvpnthing: sing-box config from the VPN provider with TUN
-    # vpnthing: sing-box config from the VPN provider without TUN (I removed it manually)
-    # proxything: sing-box HTTP in+out only (written manually)
-    # passthroughthing: sing-box HTTP in+out only, passthrough, accepts from localhost and releases from localhost (written manually)
+    # vpn: sing-box config from the VPN provider with TUN
+    # nonglobal_vpn: sing-box config from the VPN provider without TUN (I removed it manually)
+    # proxy: sing-box HTTP in+out only (written manually)
+    # off: sing-box HTTP in+out only, passthrough, accepts from localhost and releases from localhost (written manually)
 
     #[Unit]
     #
     #[Service]
     #User=root
-    #ExecStart=/usr/bin/sing-box run -D /home/megahomyak/.config/sing-box/[CONFIG NAME HERE]
+    #EnvironmentFile=/etc/.current_proxy
+    #ExecStart=/usr/bin/sing-box run -D /home/megahomyak/.config/sing-box/$CONFIG_NAME
     #
     #[Install]
     #WantedBy=multi-user.target
     sudo bash << EOF
-for service_name in proxything globalvpnthing
-do
-    if (systemctl --quiet is-active "\$service_name"); then
-        systemctl stop "\$service_name"
-    fi
-done
-service_to_run="$1"
-if [ "\$service_to_run" = "vpn" ]; then
-    service_to_run="globalvpnthing"
-fi
-if [ "\$service_to_run" = "proxy" ]; then
-    service_to_run="proxything"
-fi
-if [ "\$service_to_run" == "off" ]; then
-    service_to_run="passthroughthing"
-fi
-systemctl start "\$service_to_run"
+echo "CONFIG_NAME=$1" > /etc/.current_proxy
+systemctl start proxy
 EOF
 }
