@@ -1,4 +1,5 @@
 set expandtab
+autocmd BufNewFile,BufRead *.conf set noexpandtab
 set shiftwidth=4
 set mouse=
 au FileType dart setlocal shiftwidth=2
