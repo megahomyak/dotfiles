@@ -1,17 +1,17 @@
 link() {
-    rm ~/"$1/$2"
-    mkdir -p ~/"$1"
-    ln -rs "$1/$2" ~/"$1/$2"
+    rm "$2"
+    mkdir -p $(dirname "$2")
+    ln -rs "$1" "$2"
 }
 
-link .config/nvim init.vim
-link .config/hotfuzz_control_panel commands
-link .cargo config.toml
-link . bash_utils.sh
-link .termux termux.properties
-link . .inputrc
-link . .gitconfig
-link . .config/kitty/kitty.conf
+link init.vim ~/.config/nvim/init.vim
+link hotfuzz_control_panel/commands ~/.config/hotfuzz_control_panel/commands
+link cargo/config.toml ~/.cargo/config.toml
+link bash_utils.sh ~/bash_utils.sh
+link termux.properties ~/.termux/termux.properties
+link .inputrc ~/.inputrc
+link .gitconfig ~/.gitconfig
+link kitty.conf ~/.config/kitty/kitty.conf
 
 if FIREFOX_PATH="$(python get_firefox_default_profile_path.py)" ; then
     FIREFOX_CHROME_PROFILE_FILE_NAME='userChrome.css'
