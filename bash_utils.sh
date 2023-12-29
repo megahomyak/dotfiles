@@ -63,7 +63,7 @@ pull() {
     )
 }
 
-refresh() {
+reload() {
     source ~/.bashrc
 }
 
@@ -98,7 +98,7 @@ c() {
 }
 
 export EDITOR="nvim"
-export PS1="\e[37m\t\e[0m \e[1;32m\u\e[0m:\e[1;34m\w\e[0m\$ "
+export PS1="\e[37m\t\e[0m \e[1;32m\u@\h\e[0m:\e[1;34m\w\e[0m\$ "
 
 switch() {
     # vpn: sing-box config from the VPN provider with TUN
