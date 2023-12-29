@@ -32,6 +32,10 @@ cpf() { cp -r ~/i/copypastefiles/$@ .; }
 alias pybot="cpf python/pybot/."
 
 shell_proxy() {
+    #proxies.sh:
+    #export http_proxy=http://username:password@ip:port
+    #export https_proxy=http://username:password@ip:port
+    #export no_proxy=localhost,127.0.0.0,127.0.1.1,127.0.1.1
     bash --rcfile <(echo 'source ~/.bashrc; source ~/proxies.sh; PS1="(proxied) $PS1"')
 }
 
@@ -117,4 +121,4 @@ systemctl restart proxy
 EOF
 }
 
-alias orange="ssh -T orange"
+alias orange="ssh-add; ssh orange"
