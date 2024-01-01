@@ -29,6 +29,8 @@ Plug 'megahomyak/vim-nxml'
 Plug 'easymotion/vim-easymotion'
 
 Plug 'tpope/vim-fugitive'
+
+Plug 'img-paste-devs/img-paste.vim'
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
 nmap <Space> <Plug>(easymotion-overwin-f)
@@ -118,3 +120,7 @@ nnoremap k gk
 nnoremap j gj
 xnoremap <expr> j mode() ==# 'V' ? 'j' : 'gj'
 xnoremap <expr> k mode() ==# 'V' ? 'k' : 'gk'
+
+autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
+let g:mdip_imgdir = 'images'
+let g:mdip_imgname = 'image'
