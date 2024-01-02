@@ -121,4 +121,11 @@ systemctl restart proxy
 EOF
 }
 
+check() {
+    (
+    source /etc/.current_proxy
+    echo $CONFIG_NAME
+    )
+}
+
 alias orange="ssh-add; ssh orange"
