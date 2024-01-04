@@ -40,9 +40,11 @@ proxy() {
     if [[ "$1" == "on" ]]; then
         export http_proxy=http://127.0.0.1:2334
         export https_proxy=http://127.0.0.1:2334
-    else
+    elif [[ "$1" == "off" ]]; then
         export http_proxy=
         export https_proxy=
+    else
+        echo Option not recognized
     fi
 }
 
