@@ -129,3 +129,7 @@ check() {
 }
 
 alias orange="ssh-add; ssh orange"
+
+vserv() {
+    c /etc/systemd/system/$1
+}
