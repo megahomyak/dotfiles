@@ -1,4 +1,5 @@
 PROJECTS_PATH="$(cat ~/.projects_path)"
+export EDITOR="nvim"
 
 alias superclippy="cargo clippy -- -W clippy::pedantic -W clippy::nursery -W clippy::all"
 alias rand="ls | shuf -n 1"
@@ -78,7 +79,7 @@ c() {
     for extension in sh py c cpp cxx txt toml cson json yaml rs
     do
         if [[ "$1" == *."$extension" ]]; then
-            nvim "$1"
+            $EDITOR "$1"
             return
         fi
     done
@@ -99,7 +100,6 @@ c() {
     o "$1"
 }
 
-export EDITOR="nvim"
 export PS1="\e[37m\t\e[0m \e[1;32m\u@\h\e[0m:\e[1;34m\w\e[0m\$ "
 
 switch() {
@@ -133,5 +133,5 @@ check() {
 alias orange="ssh-add; ssh orange"
 
 vserv() {
-    c /etc/systemd/system/$1.service
+    $EDITOR /etc/systemd/system/$1.service
 }
