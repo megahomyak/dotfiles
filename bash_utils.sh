@@ -1,3 +1,5 @@
+PROJECTS_PATH="$(cat ~/.projects_path)"
+
 alias superclippy="cargo clippy -- -W clippy::pedantic -W clippy::nursery -W clippy::all"
 alias rand="ls | shuf -n 1"
 detach() {
@@ -27,7 +29,7 @@ chat() {
 HISTSIZE=300000
 HISTFILESIZE=300000
 
-cpf() { cp -r ~/i/copypastefiles/$@ .; }
+cpf() { cp -r $PROJECTS_PATH/copypastefiles/$@ .; }
 
 alias pybot="cpf python/pybot/."
 
@@ -39,7 +41,7 @@ shell_proxy() {
     bash --rcfile <(echo 'source ~/.bashrc; source ~/proxies.sh; PS1="(proxied) $PS1"')
 }
 
-source ~/i/automation/shortcuts.sh
+source $PROJECTS_PATH/automation/shortcuts.sh
 
 o() {
     if [[ -e "$1" ]]; then
@@ -51,14 +53,14 @@ o() {
 
 push() {
     (
-    cd ~/i/"$1" &&
+    cd $PROJECTS_PATH/"$1" &&
     gcp
     )
 }
 
 pull() {
     (
-    cd ~/i/"$1" &&
+    cd $PROJECTS_PATH/"$1" &&
     git pull
     )
 }
