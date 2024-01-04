@@ -133,5 +133,5 @@ check() {
 alias orange="ssh-add; ssh orange"
 
 vserv() {
-    c /etc/systemd/system/$1
+    c /etc/systemd/system/$1.service
 }
