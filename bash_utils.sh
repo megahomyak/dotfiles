@@ -34,12 +34,16 @@ cpf() { cp -r $PROJECTS_PATH/copypastefiles/$@ .; }
 
 alias pybot="cpf python/pybot/."
 
-shell_proxy() {
-    #proxies.sh:
-    #export http_proxy=http://username:password@ip:port
-    #export https_proxy=http://username:password@ip:port
-    #export no_proxy=localhost,127.0.0.0,127.0.1.1,127.0.1.1
-    bash --rcfile <(echo 'source ~/.bashrc; source ~/proxies.sh; PS1="(proxied) $PS1"')
+export no_proxy=localhost,127.0.0.0,127.0.1.1,127.0.1.1
+
+proxy() {
+    if [[ "$1" == "on" ]]; then
+        export http_proxy=http://127.0.0.1:2334
+        export https_proxy=http://127.0.0.1:2334
+    else
+        export http_proxy=
+        export https_proxy=
+    fi
 }
 
 source $PROJECTS_PATH/automation/shortcuts.sh
