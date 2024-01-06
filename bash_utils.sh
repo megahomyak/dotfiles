@@ -106,7 +106,13 @@ c() {
     o "$1"
 }
 
-export PS1="\t \u@\h:\w\$ "
+export PS1="$(
+    GRAY="\[\e[37m\]"
+    RESET="\[\e[0m\]"
+    GREEN="\[\e[1;32m\]"
+    BLUE="\[\e[1;34m\]"
+    echo "$GRAY\t$RESET $GREEN\u@\h$RESET:$BLUE\w$RESET\$ "
+)"
 
 switch() {
     # vpn: sing-box config from the VPN provider with TUN
