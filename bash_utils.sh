@@ -106,7 +106,7 @@ c() {
     o "$1"
 }
 
-export PS1="\e[37m\t\e[0m \e[1;32m\u@\h\e[0m:\e[1;34m\w\e[0m\$ "
+export PS1="\t \u@\h:\w\$ "
 
 switch() {
     # vpn: sing-box config from the VPN provider with TUN
