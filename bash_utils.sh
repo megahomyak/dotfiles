@@ -123,7 +123,7 @@ switch() {
     #[Unit]
     #
     #[Service]
-    #User=root
+    #User=${USER}
     #EnvironmentFile=/etc/.current_proxy
     #ExecStart=/usr/bin/sing-box run -D /home/megahomyak/.config/sing-box/${CONFIG_NAME}
     #
