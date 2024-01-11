@@ -147,3 +147,19 @@ alias orange="ssh-add; ssh orange"
 vserv() {
     $EDITOR /etc/systemd/system/$1.service
 }
+
+pycompile() {
+    scriptname="$1"
+    osname="$2"
+    if [[ "$osname" == "windows" ]]; then
+        pyinstaller --onefile --name program.exe "$scriptname"
+    fi
+    if [[ "$osname" == "linux" ]]; then
+        pyinstaller --onefile --name program "$scriptname"
+    fi
+}
+
+recent() {
+    ls -t | head
+    ls -t | less
+}
