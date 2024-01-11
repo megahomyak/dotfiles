@@ -160,6 +160,6 @@ pycompile() {
 }
 
 recent() {
-    ls -t | head
-    ls -t | less
+    ls -tl | head
+    ls -tl | less
 }
