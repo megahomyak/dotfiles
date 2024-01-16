@@ -163,3 +163,5 @@ recent() {
     ls -tl | head
     ls -tl | less
 }
+
+alias gd="git diff --color-words"

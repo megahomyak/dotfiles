@@ -86,4 +86,7 @@ MineCraft
 >java -jar target/TESLauncher-0.1.2.jar &
 
 Emote picker
->/snap/bin/emote
+>/snap/bin/emote &
+
+XKill
+>xkill &
