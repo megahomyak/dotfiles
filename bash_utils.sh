@@ -111,7 +111,7 @@ export PS1="$(
     RESET="\[\e[0m\]"
     GREEN="\[\e[1;32m\]"
     BLUE="\[\e[1;34m\]"
-    echo "$GRAY\t$RESET $GREEN\u@\h$RESET:$BLUE\w$RESET\$ "
+    echo "$GRAY\D{%d.%m.%Y} \t$RESET $GREEN\u@\h$RESET:$BLUE\w$RESET\$ "
 )"
 
 switch() {
@@ -165,3 +165,5 @@ recent() {
 }
 
 alias gd="git diff --color-words"
+
+source ~/i/project_manager/handles.sh
