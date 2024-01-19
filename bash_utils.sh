@@ -167,3 +167,5 @@ recent() {
 alias gd="git diff --color-words"
 
 source ~/i/project_manager/handles.sh
+
+export PYTHON_KEYRING_BACKEND=keyring.backends.fail.Keyring
