@@ -167,3 +167,26 @@ recent() {
 alias gd="git diff --color-words"
 
 TELEGRAM_DIR="~/.local/share/TelegramDesktop/tdata"
+
+far() {
+python - "$1" "$2" << EOF
+import os
+import sys
+
+_progname, pattern, replacement, *paths = sys.argv
+
+for root, dirs, files in os.walk("."):
+    for file in files:
+        file = os.path.join(root, file)
+        try:
+            with open(file, encoding="utf-8") as f:
+                contents = f.read()
+        except:
+            pass
+        else:
+            replaced = contents.replace(pattern, replacement)
+            if replaced != contents:
+                with open(file, "w", encoding="utf-8") as f:
+                    f.write(replaced)
+EOF
+}
