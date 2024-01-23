@@ -22,25 +22,23 @@ EOF
 nnoremap <silent> <Esc> :lua _G.CloseAllFloatingWindows()<CR>
 let do_not_lag_please = 0
 call plug#begin()
+
 Plug 'morhetz/gruvbox'
 
 Plug 'megahomyak/vim-nxml'
 
 Plug 'easymotion/vim-easymotion'
-
-Plug 'tpope/vim-fugitive'
-
-Plug 'img-paste-devs/img-paste.vim'
 let g:EasyMotion_do_mapping = 0
 let g:EasyMotion_smartcase = 1
 nmap <Space> <Plug>(easymotion-overwin-f)
 
-set langmap=йцукенгшщзхъ;qwfpgjluy\;[]
-set langmap+=фывапролджэ;arstdhneio'
-set langmap+=ячсмитьбю;zxcvbkm\\,.
-set langmap+=ЙЦУКЕНГШЩЗХЪ;QWFPGJLUY:{}
-set langmap+=ФЫВАПРОЛДЖЭ;ARSTDHNEIO\"
-set langmap+=ЯЧСМИТЬБЮ;ZXCVBKM<>
+Plug 'tpope/vim-fugitive'
+
+Plug 'img-paste-devs/img-paste.vim'
+
+Plug 'junegunn/limelight.vim'
+nmap <silent> <Leader>l :Limelight!!<CR>
+let g:limelight_default_coefficient = 1
 
 if !do_not_lag_please
     Plug 'neovim/nvim-lspconfig'
@@ -54,6 +52,14 @@ if !do_not_lag_please
     Plug 'hrsh7th/vim-vsnip'
 endif
 call plug#end()
+
+set langmap=йцукенгшщзхъ;qwfpgjluy\;[]
+set langmap+=фывапролджэ;arstdhneio'
+set langmap+=ячсмитьбю;zxcvbkm\\,.
+set langmap+=ЙЦУКЕНГШЩЗХЪ;QWFPGJLUY:{}
+set langmap+=ФЫВАПРОЛДЖЭ;ARSTDHNEIO\"
+set langmap+=ЯЧСМИТЬБЮ;ZXCVBKM<>
+
 if !do_not_lag_please
     lua << EOF
     for _, lsp in ipairs({"dartls", "gopls", "clangd", "tsserver", "pyright"}) do
