@@ -190,3 +190,5 @@ for root, dirs, files in os.walk("."):
                     f.write(replaced)
 EOF
 }
+
+export PROJECT_MANAGER_MODULES_PATH="/home/megahomyak/i/project_manager_modules/modules"
