@@ -48,8 +48,6 @@ proxy() {
     fi
 }
 
-source $PROJECTS_PATH/automation/shortcuts.sh
-
 o() {
     if [[ -e "$1" ]]; then
         xdg-open "$1"
