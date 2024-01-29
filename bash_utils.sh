@@ -194,3 +194,4 @@ export PROJECT_MANAGER_MODULES_PATH="/home/megahomyak/i/project_manager_modules/
 alias m="manager"
 
 alias nvim="nvim -n"
+alias diff="git diff HEAD"
