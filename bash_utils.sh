@@ -12,6 +12,7 @@ alias gc="git add --all && git commit"
 alias gp="git push --all"
 alias gcp="gc && gp"
 alias gs="git status"
+alias gcpd="gc && gp && m deploy"
 
 hint() {
     (
