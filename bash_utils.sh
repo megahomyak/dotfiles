@@ -195,3 +195,5 @@ alias m="manager"
 
 alias nvim="nvim -n"
 alias diff="git diff HEAD"
+
+alias pyr="python -i"
