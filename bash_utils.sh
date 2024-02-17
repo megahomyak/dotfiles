@@ -110,7 +110,8 @@ export PS1="$(
     RESET="\[\e[0m\]"
     GREEN="\[\e[1;32m\]"
     BLUE="\[\e[1;34m\]"
-    echo "$GRAY\D{%d.%m.%Y} \t$RESET $GREEN\u@\h$RESET:$BLUE\w$RESET\$ "
+    echo "\D{%d.%m.%Y} \t \u@\h:\w\$ "
+    #echo "$GRAY\D{%d.%m.%Y} \t$RESET $GREEN\u@\h$RESET:$BLUE\w$RESET\$ "
 )"
 
 switch() {
