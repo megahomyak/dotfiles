@@ -24,8 +24,11 @@ let do_not_lag_please = 0
 call plug#begin()
 
 Plug 'morhetz/gruvbox'
+let g:gruvbox_contrast_dark = "hard"
 
 Plug 'megahomyak/vim-nxml'
+
+Plug 'machakann/vim-swap'
 
 Plug 'easymotion/vim-easymotion'
 let g:EasyMotion_do_mapping = 0
