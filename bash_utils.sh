@@ -200,5 +200,5 @@ alias pyr="python -i"
 alias py="python"
 
 outline() {
-    echo 123
+    systemctl start outline
 }

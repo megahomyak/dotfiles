@@ -133,3 +133,5 @@ xnoremap <expr> k mode() ==# 'V' ? 'k' : 'gk'
 autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
 let g:mdip_imgdir = 'images'
 let g:mdip_imgname = 'image'
+
+command! -nargs=0 WriteAnyway :w !sudo mkdir -p "$(dirname %)" < /dev/null; sudo tee % > /dev/null
