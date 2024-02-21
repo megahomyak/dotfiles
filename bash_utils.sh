@@ -120,10 +120,7 @@ switch() {
 }
 
 check() {
-    (
-    source /etc/.current_proxy
-    echo $CONFIG_NAME
-    )
+    cat ~/.current_proxy
 }
 
 alias orange="ssh-add; ssh orange"
