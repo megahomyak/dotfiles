@@ -115,24 +115,8 @@ export PS1="$(
 )"
 
 switch() {
-    # vpn: sing-box config from the VPN provider with TUN
-    # nonglobal_vpn: sing-box config from the VPN provider without TUN (I removed TUN manually)
-    # proxy: sing-box HTTP in+out only (written manually)
-    # off: sing-box HTTP in+out only, passthrough, accepts from localhost and releases from localhost (written manually)
-
-    #[Unit]
-    #
-    #[Service]
-    #User=${USER}
-    #EnvironmentFile=/etc/.current_proxy
-    #ExecStart=/usr/bin/sing-box run -D /home/megahomyak/.config/sing-box/${CONFIG_NAME}
-    #
-    #[Install]
-    #WantedBy=multi-user.target
-    sudo bash << EOF
-echo "CONFIG_NAME=$1" > /etc/.current_proxy
-systemctl restart proxy
-EOF
+    echo "$1" > ~/.current_proxy
+    systemctl --user restart proxyrunner
 }
 
 check() {
@@ -200,5 +184,9 @@ alias pyr="python -i"
 alias py="python"
 
 outline() {
-    systemctl start outline
+    if systemctl is-active --quiet service; then
+        sudo systemctl stop outline
+    else
+        sudo systemctl start outline
+    fi
 }
