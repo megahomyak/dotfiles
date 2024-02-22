@@ -188,3 +188,7 @@ alias py="python"
 outline() {
     systemctl start outline
 }
+
+find_ps() {
+    echo "$(ps -ax | grep $1)"
+}
