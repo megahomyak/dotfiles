@@ -12,6 +12,10 @@ link termux.properties ~/.termux/termux.properties
 link .inputrc ~/.inputrc
 link .gitconfig ~/.gitconfig
 link kitty.conf ~/.config/kitty/kitty.conf
+link sing-box/proxy.service /etc/systemd/system/proxy.service
+sudo systemctl daemon-reload
+sudo systemctl enable proxy.service
+sudo systemctl start proxy.service
 
 if FIREFOX_PATH="$(python get_firefox_default_profile_path.py)" ; then
     FIREFOX_CHROME_PROFILE_FILE_NAME='userChrome.css'
