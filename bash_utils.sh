@@ -115,24 +115,31 @@ export PS1="$(
 )"
 
 switch() {
-    echo "$1" > ~/.current_proxy
-    CURRENT_PROXY_PID="$(cat ~/.current_proxy_pid)"
-    echo Children to kill: "$(pgrep -P "$CURRENT_PROXY_PID")"
-    # Sending a termination signal to all children
-    sudo pkill -P "$CURRENT_PROXY_PID"
-    # Waiting until all children are dead
-    while pgrep -P "$CURRENT_PROXY_PID" > /dev/null; do
-        sleep 0.5
-    done
-    # Killing the process itself
-    echo Parent: "$CURRENT_PROXY_PID"
-    sudo kill "$CURRENT_PROXY_PID"
-    bash ~/i/proxyrunner/proxyrunner.sh &
-    disown -h %%
+    # vpn: sing-box config from the VPN provider with TUN
+    # nonglobal_vpn: sing-box config from the VPN provider without TUN (I removed TUN manually)
+    # proxy: sing-box HTTP in+out only (written manually)
+    # off: sing-box HTTP in+out only, passthrough, accepts from localhost and releases from localhost (written manually)
+
+    #[Unit]
+    #
+    #[Service]
+    #User=${USER}
+    #EnvironmentFile=/etc/.current_proxy
+    #ExecStart=/usr/bin/sing-box run -D /home/megahomyak/.config/sing-box/${CONFIG_NAME}
+    #
+    #[Install]
+    #WantedBy=multi-user.target
+    sudo bash << EOF
+echo "CONFIG_NAME=$1" > /etc/.current_proxy
+systemctl restart proxy
+EOF
 }
 
 check() {
-    cat ~/.current_proxy
+    (
+    source /etc/.current_proxy
+    echo $CONFIG_NAME
+    )
 }
 
 alias orange="ssh-add; ssh orange"
@@ -192,6 +199,6 @@ alias gdiff="git diff HEAD"
 alias pyr="python -i"
 alias py="python"
 
-find_ps() {
-    echo "$(ps -ax | grep $1)"
+outline() {
+    systemctl start outline
 }
