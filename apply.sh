@@ -1,7 +1,7 @@
 link() {
-    rm "$2"
-    mkdir -p $(dirname "$2")
-    ln -rs "$1" "$2"
+    sudo rm "$2"
+    sudo mkdir -p $(dirname "$2")
+    sudo ln -rs "$1" "$2"
 }
 
 link init.vim ~/.config/nvim/init.vim
