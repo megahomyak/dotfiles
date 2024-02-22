@@ -116,7 +116,19 @@ export PS1="$(
 
 switch() {
     echo "$1" > ~/.current_proxy
-    systemctl --user restart proxyrunner
+    CURRENT_PROXY_PID="$(cat ~/.current_proxy_pid)"
+    echo Children to kill: "$(pgrep -P "$CURRENT_PROXY_PID")"
+    # Sending a termination signal to all children
+    sudo pkill -P "$CURRENT_PROXY_PID"
+    # Waiting until all children are dead
+    while pgrep -P "$CURRENT_PROXY_PID" > /dev/null; do
+        sleep 0.5
+    done
+    # Killing the process itself
+    echo Parent: "$CURRENT_PROXY_PID"
+    sudo kill "$CURRENT_PROXY_PID"
+    bash ~/i/proxyrunner/proxyrunner.sh &
+    disown -h %%
 }
 
 check() {
@@ -180,10 +192,6 @@ alias gdiff="git diff HEAD"
 alias pyr="python -i"
 alias py="python"
 
-outline() {
-    if systemctl is-active --quiet service; then
-        sudo systemctl stop outline
-    else
-        sudo systemctl start outline
-    fi
+find_ps() {
+    echo "$(ps -ax | grep $1)"
 }
