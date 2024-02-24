@@ -3,6 +3,8 @@ autocmd BufNewFile,BufRead *.conf set noexpandtab
 set shiftwidth=4
 set mouse=a
 au FileType dart setlocal shiftwidth=2
+au FileType gitcommit setlocal wrapmargin=0
+au FileType gitcommit setlocal textwidth=0
 set termguicolors
 set undofile
 set scl=no
