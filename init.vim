@@ -1,7 +1,7 @@
 set expandtab
 autocmd BufNewFile,BufRead *.conf set noexpandtab
 set shiftwidth=4
-set mouse=
+set mouse=a
 au FileType dart setlocal shiftwidth=2
 set termguicolors
 set undofile
