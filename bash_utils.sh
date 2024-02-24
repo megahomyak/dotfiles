@@ -192,3 +192,5 @@ outline() {
 find_ps() {
     echo "$(ps -ax | grep $1)"
 }
+
+alias fix_outline="sudo systemctl restart outline_proxy_controller.service"
