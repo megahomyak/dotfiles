@@ -137,3 +137,5 @@ let g:mdip_imgdir = 'images'
 let g:mdip_imgname = 'image'
 
 command! -nargs=0 WriteAnyway :w !sudo mkdir -p "$(dirname %)" < /dev/null; sudo tee % > /dev/null
+
+let g:netrw_localrmdir='rm -r'
