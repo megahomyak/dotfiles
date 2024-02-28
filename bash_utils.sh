@@ -195,6 +195,6 @@ find_ps() {
 
 alias fix_outline="sudo systemctl restart outline_proxy_controller.service"
 
-find_port() {
+what_hogs_port() {
     sudo netstat -tulpn | grep :$1
 }
