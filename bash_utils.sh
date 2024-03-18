@@ -186,7 +186,7 @@ alias pyr="python -i"
 alias py="python"
 
 outline() {
-    systemctl start outline
+    detach ~/Downloads/Outline-Client.AppImage
 }
 
 find_ps() {
