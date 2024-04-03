@@ -198,3 +198,9 @@ alias fix_outline="sudo systemctl restart outline_proxy_controller.service"
 what_hogs_port() {
     sudo netstat -tulpn | grep :$1
 }
+
+steal() {
+    git clone git@github.com:megahomyak/$1.git
+}
+
+alias i="c i"
