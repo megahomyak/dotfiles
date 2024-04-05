@@ -203,4 +203,6 @@ steal() {
     git clone git@github.com:megahomyak/$1.git
 }
 
-alias i="c i"
+i() {
+    c ~/i/$1
+}
