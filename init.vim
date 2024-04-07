@@ -10,6 +10,7 @@ set undofile
 set scl=no
 set shortmess=asIFTWc
 let g:netrw_localrmdir='rm -r'
+let g:netrw_banner = 0
 au BufReadPost * set bufhidden=wipe
 lua<<EOF
 _G.CloseAllFloatingWindows = function()
