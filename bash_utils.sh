@@ -206,3 +206,14 @@ steal() {
 i() {
     c ~/i/$1
 }
+
+rpull() (
+    rclone sync server_crypt: ~/i --links --progress
+)
+
+rpush() (
+    read -s -p 'rclone password: ' RCLONE_CONFIG_PASS
+    export RCLONE_CONFIG_PASS
+    rclone sync ~/i server_crypt: --links --progress
+    rclone sync ~/i yadisk_crypt: --links --progress
+)
