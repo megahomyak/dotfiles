@@ -207,12 +207,19 @@ i() {
     c ~/i/$1
 }
 
+RCLONE_FLAGS="--links --progress --fast-list --transfers 20 --checkers 20 -vvv"
+
 rpull() (
     rtransfer server_crypt: ~/i
 )
 
+rquickpush() (
+    RCLONE_FLAGS+=" --max-age 24h"
+    rpush
+)
+
 rtransfer() (
-    rclone sync "$1" "$2" --links --progress --fast-list --transfers 20 --checkers 20 -vvv
+    rclone sync "$1" "$2" $RCLONE_FLAGS
 )
 
 rpush() (
@@ -222,4 +229,4 @@ rpush() (
     rtransfer ~/i yadisk_crypt:
 )
 
-alias fuck="sudo !!"
+alias fuck="sudo \\!\\!"
