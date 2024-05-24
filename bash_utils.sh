@@ -207,7 +207,7 @@ i() {
     c ~/i/$1
 }
 
-RCLONE_FLAGS="--links --progress --fast-list --transfers 20 --checkers 20 -vvv"
+RCLONE_FLAGS="--links --progress --fast-list --transfers 20 --checkers 20 -vvv --metadata"
 
 rpull() (
     rtransfer server_crypt: ~/i
