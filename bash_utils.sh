@@ -229,4 +229,12 @@ rpush() (
     rtransfer ~/i yadisk_crypt:
 )
 
-alias fuck="sudo \\!\\!"
+alias fuck='sudo $(history -p "!!")'
+
+fucking_work() (
+    gsettings set org.gnome.mutter check-alive-timeout 0
+)
+
+fucking_stop() (
+    gsettings set org.gnome.mutter check-alive-timeout 10000
+)
