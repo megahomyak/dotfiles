@@ -239,6 +239,4 @@ fucking_stop() (
     gsettings set org.gnome.mutter check-alive-timeout 10000
 )
 
-alias p="poetry run"
-alias pa="poetry add"
-alias pr="poetry remove"
+alias pr="poetry run"
