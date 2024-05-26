@@ -241,3 +241,5 @@ fucking_stop() (
 
 alias pr="poetry run"
 alias pn="poetry run nvim"
+
+alias notes="nvim ~/notes.txt"
