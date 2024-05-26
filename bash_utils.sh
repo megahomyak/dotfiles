@@ -240,3 +240,5 @@ fucking_stop() (
 )
 
 alias p="poetry run"
+alias pa="poetry add"
+alias pr="poetry remove"
