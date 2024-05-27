@@ -15,6 +15,8 @@ link kitty.conf ~/.config/kitty/kitty.conf
 link sing-box/proxy.service /etc/systemd/system/proxy.service
 link journald.conf /etc/systemd/journald.conf
 link .Xresources ~/.Xresources
+link fonts/JetBrainsMono-Bold.ttf ~/.local/share/fonts/JetBrainsMono-Bold.ttf
+link fonts/JetBrainsMono-SemiBold.ttf ~/.local/share/fonts/JetBrainsMono-SemiBold.ttf
 
 if FIREFOX_PATH="$(python get_firefox_default_profile_path.py)" ; then
     FIREFOX_CHROME_PROFILE_FILE_NAME='userChrome.css'
