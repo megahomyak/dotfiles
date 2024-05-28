@@ -243,3 +243,5 @@ alias pr="poetry run"
 alias pn="poetry run nvim"
 
 alias notes="nvim ~/notes.txt"
+
+alias sudok="sudo docker"
