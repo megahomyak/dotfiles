@@ -250,5 +250,7 @@ alias gok="sudo docker compose up --build"
 
 rlisten() {
     cd ~/i/rclone_listener
+    read -s -p 'rclone password: ' RCLONE_CONFIG_PASS
+    export RCLONE_CONFIG_PASS
     poetry run python listener.py
 }
