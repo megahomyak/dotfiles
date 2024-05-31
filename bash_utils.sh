@@ -245,3 +245,10 @@ alias pn="poetry run nvim"
 alias notes="nvim ~/notes.txt"
 
 alias sudok="sudo docker"
+
+alias gok="sudo docker compose up --build"
+
+rlisten() {
+    cd ~/i/rclone_listener
+    poetry run python listener.py
+}
