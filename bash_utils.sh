@@ -252,3 +252,16 @@ rlisten() {
 }
 
 alias n="nvim"
+
+docker_wreck_containers() {
+    sudok rm -vf $(sudok ps -aq)
+}
+
+docker_wreck_images() {
+    sudok rmi -f $(sudok images -aq)
+}
+
+shit() {
+    sudok images
+    sudok ps -a
+}
