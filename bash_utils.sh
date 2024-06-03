@@ -261,6 +261,11 @@ docker_wreck_images() {
     sudok rmi -f $(sudok images -aq)
 }
 
+docker_explode() {
+    docker_wreck_containers
+    docker_wreck_images
+}
+
 shit() {
     echo \> sudok images
     sudok images
