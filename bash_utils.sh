@@ -250,3 +250,5 @@ rlisten() {
     export RCLONE_CONFIG_PASS
     poetry run python listener.py
 }
+
+alias n="nvim"
