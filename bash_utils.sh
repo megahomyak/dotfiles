@@ -253,17 +253,17 @@ rlisten() {
 
 alias n="nvim"
 
-docker_wreck_containers() {
+docker_purge_containers() {
     sudok rm -vf $(sudok ps -aq)
 }
 
-docker_wreck_images() {
+docker_purge_images() {
     sudok rmi -f $(sudok images -aq)
 }
 
 docker_explode() {
-    docker_wreck_containers
-    docker_wreck_images
+    docker_purge_containers
+    docker_purge_images
 }
 
 shit() {
