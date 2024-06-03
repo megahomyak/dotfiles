@@ -185,10 +185,6 @@ alias gdiff="git diff HEAD"
 alias pyr="python -i"
 alias py="python"
 
-outline() {
-    detach ~/Downloads/Outline-Client.AppImage
-}
-
 find_ps() {
     echo "$(ps -ax | grep $1)"
 }
