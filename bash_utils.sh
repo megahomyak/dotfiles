@@ -262,6 +262,9 @@ docker_wreck_images() {
 }
 
 shit() {
+    echo \> sudok images
     sudok images
+    echo
+    echo \> sudok ps -a
     sudok ps -a
 }
