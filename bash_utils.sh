@@ -273,3 +273,5 @@ shit() {
     echo \> sudok ps -a
     sudok ps -a
 }
+
+alias pyi="poetry run python -i"
