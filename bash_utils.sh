@@ -275,3 +275,9 @@ shit() {
 }
 
 alias pyi="poetry run python -i"
+
+dockdebug() {
+    sudok run -it --rm "$1" sh
+}
+
+export BUILDKIT_PROGRESS=plain
