@@ -286,3 +286,5 @@ chat() (
     export https_proxy=localhost:2334
     poetry --directory ~/i/simple_chat run python ~/i/simple_chat/chat.py "$1"
 )
+
+alias ls='ls --group-directories-first'
