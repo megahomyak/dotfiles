@@ -289,4 +289,4 @@ chat() (
 alias ls='ls --group-directories-first'
 
 alias pye="nvim ~/a.py"
-alias pyr="python ~/a.py"
+alias pyr="python -i ~/a.py"
