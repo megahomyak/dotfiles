@@ -182,7 +182,6 @@ alias m="manager"
 alias nvim="nvim -n"
 alias gdiff="git diff HEAD"
 
-alias pyr="python -i"
 alias py="python"
 
 find_ps() {
@@ -274,7 +273,7 @@ shit() {
     sudok ps -a
 }
 
-alias pyi="poetry run python -i"
+alias pyi="python -i"
 
 dockdebug() {
     sudok run -it --rm "$1" sh
@@ -288,3 +287,6 @@ chat() (
 )
 
 alias ls='ls --group-directories-first'
+
+alias pye="nvim ~/a.py"
+alias pyr="python ~/a.py"
