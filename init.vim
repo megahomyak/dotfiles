@@ -129,10 +129,10 @@ nnoremap <silent> <Leader>i :lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> <Leader>m :lua vim.lsp.buf.references()<CR>
 colorscheme gruvbox
 
-nnoremap <silent> k gk:redraw<CR>
-nnoremap <silent> j gj:redraw<CR>
-xnoremap <expr> <silent> j mode() ==# 'V' ? 'j' : 'gj' .. ':redraw<CR>'
-xnoremap <expr> <silent> k mode() ==# 'V' ? 'k' : 'gk' .. ':redraw<CR>'
+nnoremap k gk
+nnoremap j gj
+xnoremap <expr> j mode() ==# 'V' ? 'j' : 'gj'
+xnoremap <expr> k mode() ==# 'V' ? 'k' : 'gk'
 
 autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
 let g:mdip_imgdir = 'images'
