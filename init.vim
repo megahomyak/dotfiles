@@ -1,4 +1,5 @@
 set expandtab
+set laststatus=0
 autocmd BufNewFile,BufRead *.conf set noexpandtab
 set shiftwidth=4
 set mouse=a
