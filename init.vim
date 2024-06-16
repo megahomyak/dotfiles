@@ -129,17 +129,15 @@ nnoremap <silent> <Leader>i :lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> <Leader>m :lua vim.lsp.buf.references()<CR>
 colorscheme gruvbox
 
-nnoremap k gk
-nnoremap j gj
-xnoremap <expr> j mode() ==# 'V' ? 'j' : 'gj'
-xnoremap <expr> k mode() ==# 'V' ? 'k' : 'gk'
+nnoremap <silent> k gk:redraw<CR>
+nnoremap <silent> j gj:redraw<CR>
+xnoremap <expr> <silent> j mode() ==# 'V' ? 'j' : 'gj' .. ':redraw<CR>'
+xnoremap <expr> <silent> k mode() ==# 'V' ? 'k' : 'gk' .. ':redraw<CR>'
 
 autocmd FileType markdown nmap <buffer><silent> <leader>p :call mdip#MarkdownClipboardImage()<CR>
 let g:mdip_imgdir = 'images'
 let g:mdip_imgname = 'image'
 
 command! -nargs=0 WriteAnyway :w !sudo mkdir -p "$(dirname %)" < /dev/null; sudo tee % > /dev/null
-
-let g:netrw_localrmdir='rm -r'
 
 autocmd bufwritepost *.sass,*.scss  silent exec "!sass %:p %:r.css"
