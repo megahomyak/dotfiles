@@ -286,6 +286,10 @@ chat() (
     poetry --directory ~/i/simple_chat run python ~/i/simple_chat/chat.py "$1"
 )
 
+schat() {
+    python ~/i/simple_chat/chat.py "$1"
+}
+
 alias lsd='ls --group-directories-first'
 
 alias pye="nvim ~/a.py"
