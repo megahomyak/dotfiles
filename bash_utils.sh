@@ -286,7 +286,7 @@ chat() (
     poetry --directory ~/i/simple_chat run python ~/i/simple_chat/chat.py "$1"
 )
 
-alias ls='ls --group-directories-first'
+alias lsd='ls --group-directories-first'
 
 alias pye="nvim ~/a.py"
 alias pyr="python -i ~/a.py"
