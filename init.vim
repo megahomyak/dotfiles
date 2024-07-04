@@ -142,3 +142,6 @@ let g:mdip_imgname = 'image'
 command! -nargs=0 WriteAnyway :w !sudo mkdir -p "$(dirname %)" < /dev/null; sudo tee % > /dev/null
 
 autocmd bufwritepost *.sass,*.scss  silent exec "!sass %:p %:r.css"
+
+map <a-d> <Esc>
+imap <a-d> <Esc>
