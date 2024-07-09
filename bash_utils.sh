@@ -285,11 +285,15 @@ chat() (
 )
 
 proxify() {
-    export https_proxy=localhost:2334
+    export https_proxy=http://localhost:2334/
+    export http_proxy=http://localhost:2334/
+    export no_proxy=localhost
 }
 
 deproxy() {
-    export https_proxy=
+    unset https_proxy
+    unset http_proxy
+    unset no_proxy
 }
 
 schat() {
