@@ -21,12 +21,10 @@ hint() {
     )
 }
 
-chat() {
-    (
+p() (
     source ~/proxies.sh
-    chatgpt
-    )
-}
+    "$@"
+)
 
 HISTSIZE=300000
 HISTFILESIZE=300000
@@ -285,6 +283,14 @@ chat() (
     export https_proxy=localhost:2334
     poetry --directory ~/i/simple_chat run python ~/i/simple_chat/chat.py "$1"
 )
+
+proxify() {
+    export https_proxy=localhost:2334
+}
+
+deproxy() {
+    export https_proxy=
+}
 
 schat() {
     python ~/i/simple_chat/chat.py "$1"
