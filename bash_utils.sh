@@ -239,7 +239,7 @@ alias notes="nvim ~/notes.txt"
 
 alias sudok="sudo docker"
 
-alias gok="sudo docker compose up --build"
+alias gok="sudo docker compose -f docker-compose-development.yml up --build"
 
 rlisten() {
     cd ~/i/rclone_listener
