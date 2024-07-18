@@ -304,3 +304,5 @@ alias lsd='ls --group-directories-first'
 
 alias pye="nvim ~/a.py"
 alias pyr="python -i ~/a.py"
+
+alias pos="poetry shell"
