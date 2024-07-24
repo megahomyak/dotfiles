@@ -149,6 +149,7 @@ recent() {
 }
 
 alias gd="git diff --color-words"
+alias gdh="gd HEAD"
 
 TELEGRAM_DIR="~/.local/share/TelegramDesktop/tdata"
 
