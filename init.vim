@@ -78,6 +78,9 @@ if !do_not_lag_please
       ["rust-analyzer"] = {
         cargo = {
           allFeatures = true
+        },
+        diagnostics = {
+          disabled = {"unlinked-file"}
         }
       }
     }
