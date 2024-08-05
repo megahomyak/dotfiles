@@ -280,11 +280,6 @@ dockdebug() {
 
 export BUILDKIT_PROGRESS=plain
 
-chat() (
-    export https_proxy=localhost:2334
-    poetry --directory ~/i/simple_chat run python ~/i/simple_chat/chat.py "$1"
-)
-
 proxify() {
     export https_proxy=http://localhost:2334/
     export http_proxy=http://localhost:2334/
@@ -297,7 +292,7 @@ deproxy() {
     unset no_proxy
 }
 
-schat() {
+chat() {
     python ~/i/simple_chat/chat.py "$1"
 }
 
