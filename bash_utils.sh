@@ -9,6 +9,7 @@ detach() {
 }
 shopt -s expand_aliases
 alias gc="git add --all && git commit"
+alias gl="git log"
 alias gp="git push --all && git push --tags"
 alias gcp="gc && gp"
 alias gs="git status"
