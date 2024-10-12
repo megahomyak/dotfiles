@@ -70,7 +70,7 @@ set langmap+=ЯЧСМИТЬБЮ;ZXCVBKM<>
 
 if !do_not_lag_please
     lua << EOF
-    for _, lsp in ipairs({"dartls", "gopls", "clangd", "tsserver", "pyright"}) do
+    for _, lsp in ipairs({"dartls", "gopls", "clangd", "ts_ls", "pyright"}) do
         require("lspconfig")[lsp].setup{}
     end
     require'lspconfig'.rust_analyzer.setup{
