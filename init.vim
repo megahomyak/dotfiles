@@ -92,7 +92,13 @@ if !do_not_lag_please
           plugins = {
             pycodestyle = {
               enabled = false
-            }
+            },
+            pyflakes = {
+              enabled = false
+            },
+            pylint = {
+              enabled = true
+            },
           }
         }
       }
