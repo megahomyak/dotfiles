@@ -70,21 +70,33 @@ set langmap+=ЯЧСМИТЬБЮ;ZXCVBKM<>
 
 if !do_not_lag_please
     lua << EOF
-    for _, lsp in ipairs({"dartls", "gopls", "clangd", "ts_ls", "pylsp"}) do
+    for _, lsp in ipairs({"dartls", "gopls", "clangd", "ts_ls"}) do
         require("lspconfig")[lsp].setup{}
     end
     require'lspconfig'.rust_analyzer.setup{
-    settings = {
-      ["rust-analyzer"] = {
-        cargo = {
-          allFeatures = true
-        },
-        diagnostics = {
-          disabled = {"unlinked-file"}
+      settings = {
+        ["rust-analyzer"] = {
+          cargo = {
+            allFeatures = true
+          },
+          diagnostics = {
+            disabled = {"unlinked-file"}
+          }
         }
       }
     }
-  }
+
+    require'lspconfig'.pylsp.setup{
+      settings = {
+        pylsp = {
+          plugins = {
+            pycodestyle = {
+              enabled = false
+            }
+          }
+        }
+      }
+    }
 
     local cmp = require("cmp")
     cmp.setup {
