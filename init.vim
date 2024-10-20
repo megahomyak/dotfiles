@@ -86,24 +86,6 @@ if !do_not_lag_please
       }
     }
 
-    require'lspconfig'.pylsp.setup{
-      settings = {
-        pylsp = {
-          plugins = {
-            pycodestyle = {
-              enabled = false
-            },
-            pyflakes = {
-              enabled = false
-            },
-            pylint = {
-              enabled = true
-            },
-          }
-        }
-      }
-    }
-
     local cmp = require("cmp")
     cmp.setup {
         mapping = {
