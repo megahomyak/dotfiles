@@ -303,3 +303,5 @@ alias pye="nvim ~/a.py"
 alias pyr="python -i ~/a.py"
 alias pos="poetry shell"
 alias nah="nvim -u NONE"
+
+alias lighthouse="python ~/i/lighthouse_minecraft_launcher/install.py"
