@@ -305,3 +305,5 @@ alias pos="poetry shell"
 alias nah="nvim -u NONE"
 
 alias lighthouse="python ~/i/lighthouse_minecraft_launcher/lighthouse.py"
+
+alias partitions="lsblk -o NAME,PARTLABEL"
