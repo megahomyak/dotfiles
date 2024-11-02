@@ -19,3 +19,4 @@ link fonts/JetBrainsMono-Bold.ttf ~/.local/share/fonts/JetBrainsMono-Bold.ttf
 link fonts/JetBrainsMono-SemiBold.ttf ~/.local/share/fonts/JetBrainsMono-SemiBold.ttf
 link flameshot.ini ~/.config/flameshot/flameshot.ini
 link copyq.conf ~/.config/copyq/copyq.conf
+link .xsession ~/.xsession
