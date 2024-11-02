@@ -12,7 +12,6 @@ link termux.properties ~/.termux/termux.properties
 link .inputrc ~/.inputrc
 link .gitconfig ~/.gitconfig
 link kitty.conf ~/.config/kitty/kitty.conf
-link sing-box/proxy.service /etc/systemd/system/proxy.service
 link journald.conf /etc/systemd/journald.conf
 link .Xresources ~/.Xresources
 link fonts/JetBrainsMono-Bold.ttf ~/.local/share/fonts/JetBrainsMono-Bold.ttf
