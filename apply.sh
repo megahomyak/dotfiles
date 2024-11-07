@@ -19,3 +19,4 @@ link fonts/JetBrainsMono-SemiBold.ttf ~/.local/share/fonts/JetBrainsMono-SemiBol
 link flameshot.ini ~/.config/flameshot/flameshot.ini
 link copyq.conf ~/.config/copyq/copyq.conf
 link .xsession ~/.xsession
+link xinput/90-darn-tablet.conf /usr/share/X11/xorg.conf.d/90-darn-tablet.conf
