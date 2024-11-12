@@ -69,7 +69,7 @@ set langmap+=ФЫВАПРОЛДЖЭ;ARSTDHNEIO\"
 set langmap+=ЯЧСМИТЬБЮ;ZXCVBKM<>
 
 if !do_not_lag_please
-    lua << EOF
+    silent! lua << EOF
     for _, lsp in ipairs({"dartls", "gopls", "clangd", "ts_ls"}) do
         require("lspconfig")[lsp].setup{}
     end
