@@ -241,8 +241,6 @@ alias notes="nvim ~/notes.txt"
 
 alias sudok="sudo docker"
 
-alias gok="sudo docker compose -f docker-compose-development.yml up --build"
-
 rlisten() {
     cd ~/i/rclone_listener
     read -s -p 'rclone password: ' RCLONE_CONFIG_PASS
