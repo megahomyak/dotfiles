@@ -146,3 +146,5 @@ command! -nargs=0 WriteAnyway :w !sudo mkdir -p "$(dirname %)" < /dev/null; sudo
 
 map <a-d> <Esc>
 imap <a-d> <Esc>
+
+command! UseMixtral execute "normal! iMODEL mixtral-8x7b-32768\<CR>USER "
