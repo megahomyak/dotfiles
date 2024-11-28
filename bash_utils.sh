@@ -108,6 +108,11 @@ RCLONE_FLAGS="--links --progress --fast-list --transfers 20 --checkers 20 -vvv -
 alias sudok="sudo docker"
 
 alias n="nvim"
+alias f="nvim"
+_f() {
+    COMPREPLY=( $(ls -p | grep -v /) );
+}
+complete -F _f f
 
 docker_purge_containers() {
     sudok rm -vf $(sudok ps -aq)
