@@ -14,95 +14,29 @@ alias gp="git push --tags && git push --all"
 alias gcp="gc && gp"
 alias gs="git status"
 alias gcpd="gc && gp && m deploy"
-
-hint() {
-    (
-    source ~/proxies.sh
-    chatgpt cmd
-    )
-}
-
-p() (
-    source ~/proxies.sh
-    "$@"
-)
+alias gd="git diff --color-words"
+alias gdh="gd HEAD"
 
 HISTSIZE=300000
 HISTFILESIZE=300000
 
-cpf() { cp -r $PROJECTS_PATH/copypastefiles/$@ .; }
+push() (
+    cd $PROJECTS_PATH/"$1" && gcp
+)
 
-alias pybot="cpf python/pybot/."
-
-export no_proxy=localhost,127.0.0.0,127.0.1.1,127.0.1.1
-
-proxy() {
-    if [[ "$1" == "on" ]]; then
-        export http_proxy=http://127.0.0.1:2334
-        export https_proxy=http://127.0.0.1:2334
-    elif [[ "$1" == "off" ]]; then
-        export http_proxy=
-        export https_proxy=
-    else
-        echo Option not recognized
-    fi
-}
-
-o() {
-    if [[ -e "$1" ]]; then
-        xdg-open "$1"
-    else
-        echo "This file does not exist"
-    fi
-}
-
-push() {
-    (
-    cd $PROJECTS_PATH/"$1" &&
-    gcp
-    )
-}
-
-pull() {
-    (
-    cd $PROJECTS_PATH/"$1" &&
-    git pull
-    )
-}
+pull() (
+    cd $PROJECTS_PATH/"$1" && git pull
+)
 
 reload() {
     source ~/.bashrc
 }
 
 c() {
-    if [[ -d "$1" || "$1" == "-" ]]; then
-        cd "$1"
-        ls
-        return
-    fi
-    for extension in sh py c cpp cxx txt toml cson json yaml rs
-    do
-        if [[ "$1" == *."$extension" ]]; then
-            $EDITOR "$1"
-            return
-        fi
-    done
-    for extension in png jpeg jpg bmp
-    do
-        if [[ "$1" == *."$extension" ]]; then
-            xviewer "$1"
-            return
-        fi
-    done
-    for extension in svg
-    do
-        if [[ "$1" == *."$extension" ]]; then
-            inkscape "$1"
-            return
-        fi
-    done
-    o "$1"
+    cd "$1"
+    ls
 }
+complete -F _cd c
 
 export PS1="$(
     GRAY="\[\e[37m\]"
@@ -120,39 +54,17 @@ systemctl restart proxy
 EOF
 }
 
-check() {
-    (
+check() (
     source /etc/.current_proxy
     echo $CONFIG_NAME
-    )
-}
+)
 
 alias orange="ssh-add; ssh orange"
-
-vserv() {
-    $EDITOR /etc/systemd/system/$1.service
-}
-
-pycompile() {
-    scriptname="$1"
-    osname="$2"
-    if [[ "$osname" == "windows" ]]; then
-        pyinstaller --onefile --name program.exe "$scriptname"
-    fi
-    if [[ "$osname" == "linux" ]]; then
-        pyinstaller --onefile --name program "$scriptname"
-    fi
-}
 
 recent() {
     ls -tl | head
     ls -tl | less
 }
-
-alias gd="git diff --color-words"
-alias gdh="gd HEAD"
-
-TELEGRAM_DIR="~/.local/share/TelegramDesktop/tdata"
 
 far() {
 python - "$1" "$2" << EOF
@@ -180,15 +92,8 @@ EOF
 alias m="manager"
 
 alias nvim="nvim -n"
-alias gdiff="git diff HEAD"
 
 alias py="python"
-
-find_ps() {
-    echo "$(ps -ax | grep $1)"
-}
-
-alias fix_outline="sudo systemctl restart outline_proxy_controller.service"
 
 what_hogs_port() {
     sudo netstat -tulpn | grep :$1
@@ -198,55 +103,9 @@ steal() {
     git clone git@github.com:megahomyak/$1.git
 }
 
-i() {
-    c ~/i/$1
-}
-
 RCLONE_FLAGS="--links --progress --fast-list --transfers 20 --checkers 20 -vvv --metadata"
 
-rpull() (
-    rtransfer server_crypt: ~/i
-)
-
-rquickpush() (
-    RCLONE_FLAGS+=" --max-age 24h"
-    rpush
-)
-
-rtransfer() (
-    rclone sync "$1" "$2" $RCLONE_FLAGS
-)
-
-rpush() (
-    read -s -p 'rclone password: ' RCLONE_CONFIG_PASS
-    export RCLONE_CONFIG_PASS
-    rtransfer ~/i server_crypt:
-    rtransfer ~/i yadisk_crypt:
-)
-
-alias fuck='sudo $(history -p "!!")'
-
-fucking_work() (
-    gsettings set org.gnome.mutter check-alive-timeout 0
-)
-
-fucking_stop() (
-    gsettings set org.gnome.mutter check-alive-timeout 10000
-)
-
-alias pr="poetry run"
-alias pn="poetry run nvim"
-
-alias notes="nvim ~/notes.txt"
-
 alias sudok="sudo docker"
-
-rlisten() {
-    cd ~/i/rclone_listener
-    read -s -p 'rclone password: ' RCLONE_CONFIG_PASS
-    export RCLONE_CONFIG_PASS
-    poetry run python listener.py
-}
 
 alias n="nvim"
 
@@ -285,7 +144,7 @@ proxify() {
     export no_proxy=localhost
 }
 
-deproxy() {
+deproxify() {
     unset https_proxy
     unset http_proxy
     unset no_proxy
@@ -302,6 +161,11 @@ alias pyr="python -i ~/a.py"
 alias pos="poetry shell"
 alias nah="nvim -u NONE"
 
-alias lighthouse="python ~/i/lighthouse_minecraft_launcher/lighthouse.py"
+lighthouse() (
+    cd ~/lighthouse
+    CMDNAME=$1
+    shift
+    ~/i/lighthouse_minecraft_launcher/lighthouse-$CMDNAME $@
+)
 
-alias partitions="lsblk -o NAME,PARTLABEL"
+source ~/i/frozen_speech/contents/bash_helpers.sh
