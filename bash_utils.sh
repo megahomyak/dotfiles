@@ -37,6 +37,9 @@ c() {
     ls
 }
 complete -F _cd c
+d() {
+    cd ..
+}
 
 export PS1="$(
     GRAY="\[\e[37m\]"
