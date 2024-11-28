@@ -40,6 +40,13 @@ complete -F _cd c
 d() {
     cd ..
 }
+i() {
+    c ~/i/$1
+}
+_i() {
+    COMPREPLY=( $( ls -p ~/i | grep / | grep "^$2" ) );
+}
+complete -F _i i
 
 export PS1="$(
     GRAY="\[\e[37m\]"
