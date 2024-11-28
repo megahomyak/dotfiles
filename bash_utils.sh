@@ -110,7 +110,7 @@ alias sudok="sudo docker"
 alias n="nvim"
 alias f="nvim"
 _f() {
-    COMPREPLY=( $(ls -p | grep -v /) );
+    COMPREPLY=( $( ls -p | grep -v / | grep "^$2" ) );
 }
 complete -F _f f
 
