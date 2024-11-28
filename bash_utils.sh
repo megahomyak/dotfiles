@@ -175,6 +175,7 @@ alias pye="nvim ~/a.py"
 alias pyr="python -i ~/a.py"
 alias pos="poetry shell"
 alias nah="nvim -u NONE"
+alias por="poetry run python"
 
 lighthouse() (
     cd ~/lighthouse
