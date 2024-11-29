@@ -38,7 +38,7 @@ c() {
 }
 complete -F _cd c
 d() {
-    cd ..
+    c ..
 }
 i() {
     c ~/i/$1
