@@ -44,7 +44,7 @@ i() {
     c ~/i/$1
 }
 _i() {
-    COMPREPLY=( $( ls -p ~/i | grep / | grep "^$2" ) );
+    COMPREPLY=( $( ls -pa ~/i | grep / | grep "^$2" ) );
 }
 complete -F _i i
 
@@ -72,8 +72,8 @@ check() (
 alias orange="ssh-add; ssh orange"
 
 recent() {
-    ls -tl | head
-    ls -tl | less
+    ls -tla | head
+    ls -tla | less
 }
 
 far() {
@@ -120,7 +120,7 @@ alias sudok="sudo docker"
 alias n="nvim"
 alias f="nvim"
 _f() {
-    COMPREPLY=( $( ls -p | grep -v / | grep "^$2" ) );
+    COMPREPLY=( $( ls -pa | grep -v / | grep "^$2" ) );
 }
 complete -F _f f
 
