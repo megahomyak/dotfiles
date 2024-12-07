@@ -185,3 +185,21 @@ lighthouse() (
 )
 
 source ~/i/frozen_speech/contents/bash_helpers.sh
+
+sizeof() (
+    set -e
+
+    cd ~
+
+    gcc -x c - << EOF
+        #include <stdio.h>
+
+        $2
+
+        void main(void) {
+            printf("%zu\n", sizeof($1));
+        }
+EOF
+
+    ./a.out
+)
