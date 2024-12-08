@@ -72,8 +72,8 @@ check() (
 alias orange="ssh-add; ssh orange"
 
 recent() {
-    ls -tla | head
-    ls -tla | less
+    ls -tl | head
+    ls -tl | less
 }
 
 far() {
