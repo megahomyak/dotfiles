@@ -126,7 +126,7 @@ _f() {
     else
         FILEPREFIX="$(basename "$2")"
     fi
-    COMPREPLY=( $(find "$(dirname "$2.")" -maxdepth 1 -type f -name "$FILEPREFIX*" | sed -e "s#^./##") );
+    COMPREPLY=( $(find -L "$(eval echo "$(dirname "$2.")")" -maxdepth 1 -type f -name "$FILEPREFIX*" | sed "s#^./##") );
 }
 complete -F _f f
 
