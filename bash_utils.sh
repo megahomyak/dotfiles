@@ -120,7 +120,13 @@ alias sudok="sudo docker"
 alias n="nvim"
 alias f="nvim"
 _f() {
-    COMPREPLY=( $( ls -pa | grep -v / | grep "^$2" ) );
+    # find -type f -regex "\\./$1[^/]" -printf "%d %p\n" | sort -n | sed -e 's/^[0-9]\+\s.\///;'
+    if [ "$(basename "$2.")" = "." ]; then
+        FILEPREFIX=""
+    else
+        FILEPREFIX="$(basename "$2")"
+    fi
+    COMPREPLY=( $(find "$(dirname "$2.")" -maxdepth 1 -type f -name "$FILEPREFIX*" | sed -e "s#^./##") );
 }
 complete -F _f f
 
