@@ -1,6 +1,9 @@
 set expandtab
 set laststatus=0
 nnoremap <c-g> 1<c-g>
+noremap x "_x
+noremap y "+y
+noremap p "+p
 autocmd BufNewFile,BufRead *.conf set noexpandtab
 set shiftwidth=4
 set mouse=a
