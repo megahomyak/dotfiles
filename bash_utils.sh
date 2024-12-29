@@ -126,7 +126,7 @@ _f() {
     else
         FILEPREFIX="$(basename "$2")"
     fi
-    COMPREPLY=( $(find -L "$(eval echo "$(dirname "$2.")")" -maxdepth 1 -type f -name "$FILEPREFIX*" | sed "s#^./##") );
+    readarray -d $'\n' -t COMPREPLY <<< "$(find -L "$(eval echo "$(dirname "$2.")")" -maxdepth 1 -type f -name "$FILEPREFIX*" | sed "s#^./##" | xargs -I '{}' printf '%q\n' '{}')"
 }
 complete -F _f f
 
