@@ -33,8 +33,7 @@ reload() {
 }
 
 c() {
-    cd "$1"
-    ls
+    cd "$1" && ls
 }
 complete -F _cd c
 d() {
