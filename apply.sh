@@ -20,3 +20,4 @@ link flameshot.ini ~/.config/flameshot/flameshot.ini
 link copyq.conf ~/.config/copyq/copyq.conf
 link xinput/90-darn-tablet.conf /usr/share/X11/xorg.conf.d/90-darn-tablet.conf
 link hwdb.d/99-capslk-esc-swap.hwdb /etc/udev/hwdb.d/99-capslk-esc-swap.hwdb
+link .vimrc ~/.vimrc
