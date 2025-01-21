@@ -100,7 +100,8 @@ EOF
 
 alias m="manager"
 mi() {
-    ~/i/project_manager/$1
+    cd ~/i/project_manager
+    ./$1
 }
 
 alias nvim="nvim -n"
