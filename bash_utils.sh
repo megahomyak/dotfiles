@@ -212,3 +212,5 @@ EOF
 
     ./a.out
 )
+
+unset DEBUGINFOD_URLS
