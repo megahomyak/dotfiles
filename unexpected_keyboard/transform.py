@@ -18,18 +18,18 @@ for i, key in enumerate(keys):
 
 def write_key(key):
     out.write(f'<key')
-    for attr, value in key.items()
+    for attr, value in key.items():
             out.write(f' {attr}=\"{value}\"')
-    out.write(f' />')
-for key in all_[:top_row_length]: # Top row
-    out.write('<row>\n')
+    out.write(f' />\n')
+out.write('<row>\n') # Top row
+for key in all_[:top_row_length]:
     write_key(key)
-    out.write('</row>\n')
-for key in all_[top_row_length:]: # Bottom row
-    out.write('<row>\n')
-    out.write('<key key0="shift" key2="loc capslock" />\n')
+out.write('</row>\n') # Top row
+out.write('<row>\n') # Bottom row
+out.write('<key key0="shift" key2="loc capslock" />\n')
+for key in all_[top_row_length:]:
     write_key(key)
-    out.write('<key key0="backspace" key1="delete" />\n')
-    out.write('</row>\n')
+out.write('<key key0="backspace" key1="delete" />\n')
+out.write('</row>\n') # Bottom row
 
 out.write(f'</keyboard>\n')
