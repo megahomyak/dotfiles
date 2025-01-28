@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<keyboard name="tiny_ru" script="latin"><row>
+<key key0="о" key1="ы" key2="ъ" key3="&amp;" key4="~" />
+<key key0="е" key1="т" key2="ё" key3="-" key4="|" />
+<key key0="а" key1="ь" key2="0" key3="+" key4="\" />
+<key key0="и" key1="г" key2="1" key3="(" key4="{" />
+<key key0="н" key1="з" key2="2" key3=")" key4="}" />
+<key key0="т" key1="б" key2="3" key3="/" key4="%" />
+<key key0="с" key1="ч" key2="4" key3="*" key4="=" />
+<key key0="р" key1="й" key2="5" key3="&quot;" key4="`" />
+<key key0="в" key1="х" key2="6" key3="'" key4="[" />
+</row>
+<row>
+<key key0="shift" key2="loc capslock" />
+<key key0="л" key1="ж" key2="7" key3=":" key4="]" />
+<key key0="к" key1="ш" key2="8" key3=";" key4="&lt;" />
+<key key0="м" key1="ю" key2="9" key3="!" key4="&gt;" />
+<key key0="д" key1="ц" key2="@" key3="?" />
+<key key0="п" key1="щ" key2="#" key3="," />
+<key key0="у" key1="э" key2="$" key3="." />
+<key key0="я" key1="ф" key2="_" key3="^" />
+<key key0="backspace" key1="delete" />
+</row>
+</keyboard>
