@@ -100,7 +100,9 @@ EOF
 
 alias m="manager"
 mi() {
-    ~/i/project_manager/$1
+    SCRIPT_NAME=$1
+    shift
+    SCRIPT_HOME=~/i/project_manager ~/i/project_manager/$SCRIPT_NAME "$@"
 }
 
 alias nvim="nvim -n"
