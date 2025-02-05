@@ -9,10 +9,11 @@ nnoremap d "+d
 vnoremap d "+d
 nnoremap p "+p
 vnoremap p "+p
-autocmd BufNewFile,BufRead *.conf set noexpandtab
+autocmd BufNewFile,BufRead *.conf setlocal noexpandtab
 set shiftwidth=4
 set mouse=a
 au FileType dart setlocal shiftwidth=2
+au FileType go setlocal noexpandtab shiftwidth=4 tabstop=4
 au FileType gitcommit setlocal wrapmargin=0
 au FileType gitcommit setlocal textwidth=0
 set termguicolors
