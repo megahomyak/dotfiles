@@ -43,7 +43,7 @@ i() {
     c ~/i/$1
 }
 _i() {
-    COMPREPLY=( $( ls -pa ~/i | grep / | grep "^$2" ) );
+    COMPREPLY=( $( ls -pA ~/i | grep / | grep "^$2" ) );
 }
 complete -F _i i
 
@@ -104,6 +104,10 @@ mi() {
     shift
     SCRIPT_HOME=~/i/project_manager ~/i/project_manager/$SCRIPT_NAME "$@"
 }
+_mi() {
+    COMPREPLY=( $( ls ~/i/project_manager | grep "^$2" ) );
+}
+complete -F _mi mi
 
 alias nvim="nvim -n"
 
