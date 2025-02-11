@@ -21,7 +21,7 @@ HISTSIZE=300000
 HISTFILESIZE=300000
 
 push() (
-    cd $PROJECTS_PATH/"$1" && gcp
+    cd $PROJECTS_PATH/"$1" && ( gc ; gp )
 )
 
 pull() (
