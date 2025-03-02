@@ -13,7 +13,7 @@ alias gl="git log"
 alias gp="git push --tags && git push --all"
 alias gcp="gc && gp"
 alias gs="git status"
-alias gcpd="gc && gp && mi deploy"
+alias gcpd="gc && gp && m deploy"
 alias gd="git diff --color-words"
 alias gdh="gd HEAD"
 
@@ -98,16 +98,15 @@ for root, dirs, files in os.walk("."):
 EOF
 }
 
-alias m="manager"
-mi() {
+m() {
     SCRIPT_NAME=$1
     shift
     SCRIPT_HOME=~/i/project_manager ~/i/project_manager/$SCRIPT_NAME "$@"
 }
-_mi() {
+_m() {
     COMPREPLY=( $( ls ~/i/project_manager | grep "^$2" ) );
 }
-complete -F _mi mi
+complete -F _m m
 
 alias nvim="nvim -n"
 
