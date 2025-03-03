@@ -222,3 +222,32 @@ unset DEBUGINFOD_URLS # For gdb not to FUCK MY BRAIN about some FUCKING UBUNTU D
 shite() {
     TARGET=~/si ~/i/shitcryption/shitcryption.sh "$@"
 }
+
+dec() {
+    if [ "$1" == "" ]; then
+        shite
+        nano --saveonexit ~/encdec_temp \
+        && rage -d -i ~/si/flash/megaage ~/encdec_temp \
+        && echo ''
+        rm ~/encdec_temp
+        shite
+    else
+        echo "You shouldn't provide the recipient"
+    fi
+}
+
+enc() {
+    if [ "$1" == "" ]; then
+        echo "You forgot to provide the recipient"
+    else
+        shite
+        nano --saveonexit ~/encdec_temp \
+        && rage -e -R ~/si/flash/$1 ~/encdec_temp -a
+        rm ~/encdec_temp
+        shite
+    fi
+}
+# _enc() {
+#     COMPREPLY=( $( ls -p ~/si/flash | grep -v / | grep "^$2" ) );
+# }
+# complete -F _enc enc
