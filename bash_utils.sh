@@ -227,7 +227,7 @@ dec() {
     if [ "$1" == "" ]; then
         shite
         nano --saveonexit ~/encdec_temp \
-        && rage -d -i ~/si/flash/megaage ~/encdec_temp \
+        && rage -d -i ~/si/flash/megaage ~/encdec_temp | cat \
         && echo ''
         rm ~/encdec_temp
         shite
@@ -242,7 +242,7 @@ enc() {
     else
         shite
         nano --saveonexit ~/encdec_temp \
-        && rage -e -R ~/si/flash/$1 ~/encdec_temp -a
+        && rage -e -R ~/si/flash/$1 ~/encdec_temp -a | cat
         rm ~/encdec_temp
         shite
     fi
