@@ -226,7 +226,7 @@ shite() {
 dec() {
     if [ "$1" == "" ]; then
         shite
-        nano --saveonexit ~/encdec_temp \
+        vim ~/encdec_temp \
         && rage -d -i ~/si/flash/megaage ~/encdec_temp | cat \
         && echo ''
         rm ~/encdec_temp
@@ -241,7 +241,7 @@ enc() {
         echo "You forgot to provide the recipient"
     else
         shite
-        nano --saveonexit ~/encdec_temp \
+        vim ~/encdec_temp \
         && rage -e -R ~/si/flash/$1 ~/encdec_temp -a | cat
         rm ~/encdec_temp
         shite
