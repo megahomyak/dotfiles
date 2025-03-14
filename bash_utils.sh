@@ -68,7 +68,7 @@ check() (
     echo $CONFIG_NAME
 )
 
-alias orange="ssh-add; ssh orange"
+alias orange="ssh orange"
 
 recent() {
     ls -tlA | head
