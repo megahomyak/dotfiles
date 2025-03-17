@@ -99,9 +99,7 @@ EOF
 }
 
 m() {
-    SCRIPT_NAME=$1
-    shift
-    SCRIPT_HOME=~/i/project_manager ~/i/project_manager/$SCRIPT_NAME "$@"
+    SCRIPT_HOME=~/i/project_manager ~/i/project_manager/"$@"
 }
 _m() {
     COMPREPLY=( $( ls ~/i/project_manager | grep "^$2" ) );
