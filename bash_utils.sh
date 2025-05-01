@@ -251,3 +251,5 @@ enc() {
 #     COMPREPLY=( $( ls -p ~/si/flash | grep -v / | grep "^$2" ) );
 # }
 # complete -F _enc enc
+
+source ~/i/micronotes/micronotes.bash
