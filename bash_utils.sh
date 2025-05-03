@@ -252,4 +252,7 @@ enc() {
 # }
 # complete -F _enc enc
 
-source ~/i/micronotes/micronotes.bash
+export MICRONOTES_LOCAL_DIR=~/micronotes
+export MICRONOTES_REMOTE_DIR=micronotes
+export MICRONOTES_REMOTE_CREDENTIALS=orange
+alias mi=~/i/micronotes/micronotes.sh
