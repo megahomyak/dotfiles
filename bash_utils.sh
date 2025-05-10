@@ -58,46 +58,11 @@ export PS1="$(
     echo "$GRAY\D{%d.%m.%Y} \t$RESET $GREEN\u@\h$RESET:$BLUE\w$RESET\n\$ "
 )"
 
-switch() {
-    sudo bash << EOF
-echo "CONFIG_NAME=$1" > /etc/.current_proxy
-systemctl restart proxy
-EOF
-}
-
-check() (
-    source /etc/.current_proxy
-    echo $CONFIG_NAME
-)
-
 alias orange="ssh orange"
 
 recent() {
     ls -tlA | head
     ls -tlA | less
-}
-
-far() {
-python - "$1" "$2" << EOF
-import os
-import sys
-
-_progname, pattern, replacement, *paths = sys.argv
-
-for root, dirs, files in os.walk("."):
-    for file in files:
-        file = os.path.join(root, file)
-        try:
-            with open(file, encoding="utf-8") as f:
-                contents = f.read()
-        except:
-            pass
-        else:
-            replaced = contents.replace(pattern, replacement)
-            if replaced != contents:
-                with open(file, "w", encoding="utf-8") as f:
-                    f.write(replaced)
-EOF
 }
 
 m() {
