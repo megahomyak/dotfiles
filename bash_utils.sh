@@ -1,4 +1,4 @@
-PROJECTS_PATH="$(cat ~/.projects_path)"
+PROJECTS_PATH=~/i
 export EDITOR="nvim"
 
 alias superclippy="cargo clippy -- -W clippy::pedantic -W clippy::nursery -W clippy::all"
@@ -85,8 +85,6 @@ steal() {
     git clone git@github.com:megahomyak/$1.git
 }
 
-RCLONE_FLAGS="--links --progress --fast-list --transfers 20 --checkers 20 -vvv --metadata"
-
 alias sudok="sudo docker"
 
 alias n="nvim"
@@ -162,7 +160,7 @@ lighthouse() (
     ~/i/lighthouse_minecraft_launcher/lighthouse-$CMDNAME $@
 )
 
-source ~/i/frozen_speech/utils/utils.bash
+source ~/i/frozen_speech/utils/utils.bash 2&> /dev/null
 
 sizeof() (
     set -e
