@@ -219,3 +219,6 @@ export MICRONOTES_LOCAL_DIR=~/micronotes
 export MICRONOTES_REMOTE_DIR=micronotes
 export MICRONOTES_REMOTE_CREDENTIALS=orange
 alias mi=~/i/micronotes/micronotes.sh
+
+export CONVENIENT_AGE_STORAGE_DIRECTORY=~/convenient-age
+alias ca=~/i/convenient-age/convenience.sh
