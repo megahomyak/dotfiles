@@ -186,35 +186,6 @@ shite() {
     TARGET=~/si ~/i/shitcryption/shitcryption.sh "$@"
 }
 
-dec() {
-    if [ "$1" == "" ]; then
-        shite
-        vim ~/encdec_temp \
-        && rage -d -i ~/si/flash/megaage ~/encdec_temp | cat \
-        && echo ''
-        rm ~/encdec_temp
-        shite
-    else
-        echo "You shouldn't provide the recipient"
-    fi
-}
-
-enc() {
-    if [ "$1" == "" ]; then
-        echo "You forgot to provide the recipient"
-    else
-        shite
-        vim ~/encdec_temp \
-        && rage -e -R ~/si/flash/$1 ~/encdec_temp -a | cat
-        rm ~/encdec_temp
-        shite
-    fi
-}
-# _enc() {
-#     COMPREPLY=( $( ls -p ~/si/flash | grep -v / | grep "^$2" ) );
-# }
-# complete -F _enc enc
-
 export MICRONOTES_LOCAL_DIR=~/micronotes
 export MICRONOTES_REMOTE_DIR=micronotes
 export MICRONOTES_REMOTE_CREDENTIALS=orange
