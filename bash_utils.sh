@@ -195,3 +195,9 @@ export CONVENIENT_AGE_STORAGE_DIRECTORY=~/convenient-age
 alias ca=~/i/convenient-age/convenience.sh
 
 alias sd=~/i/secret_doc/secret_doc.sh
+sds() (
+    set -euo pipefail
+    scp orange:secret ~/secret
+    sd ~/secret
+    scp ~/secret orange:secret
+)
