@@ -197,5 +197,5 @@ alias ca=~/i/convenient-age/convenience.sh
 export secret_stash_remote_dir=ss
 export secret_stash_local_dir=~/ss
 export secret_stash_remote_host=orange
-export secret_stash_connect_timeout=3
+export secret_stash_connect_timeout=5
 alias ss=~/i/secret_stash/secret_stash.sh
