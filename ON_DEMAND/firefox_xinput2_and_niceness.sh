@@ -6,7 +6,7 @@ mv /usr/lib/firefox/firefox-bin /usr/lib/firefox/true-firefox-bin
 cat > /usr/lib/firefox/firefox-bin << EOF2
 #!/bin/bash
 export MOZ_USE_XINPUT2=1
-exec nice -n -6 /usr/lib/firefox/true-firefox-bin "\\\$@"
+exec nice -n -20 /usr/lib/firefox/true-firefox-bin "\\\$@"
 EOF2
 chmod +x /usr/lib/firefox/firefox-bin
 EOF
