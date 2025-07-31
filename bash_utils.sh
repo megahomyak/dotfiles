@@ -8,9 +8,14 @@ detach() {
     disown -h %%
 }
 shopt -s expand_aliases
+until0() {
+    while ! "$@"; do
+        echo 'Retrying...' >&2
+    done
+}
 alias gc="git add --all && git commit"
 alias gl="git log"
-alias gp="git push --tags && git push --all"
+alias gp="until0 git push --tags && until0 git push --all"
 alias gcp="gc && gp"
 alias gs="git status"
 alias gcpd="gc && gp && m deploy"
