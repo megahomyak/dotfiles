@@ -22,7 +22,7 @@ alias gcpd="gc && gp && m deploy"
 alias gd="git diff --color-words"
 alias gdh="gd HEAD"
 
-alias wtd="nvim ~/wtd.txt"
+alias nn="nvim -c 'set noeol'"
 
 HISTSIZE=300000
 HISTFILESIZE=300000

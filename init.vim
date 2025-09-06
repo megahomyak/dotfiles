@@ -9,7 +9,6 @@ nnoremap d "+d
 vnoremap d "+d
 nnoremap p "+p
 vnoremap p "+p
-autocmd BufNewFile,BufRead *.room setlocal noendofline
 autocmd BufNewFile,BufRead *.conf setlocal noexpandtab
 set shiftwidth=4
 set mouse=a
