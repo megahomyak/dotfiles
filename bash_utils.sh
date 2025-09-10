@@ -187,9 +187,7 @@ EOF
 
 unset DEBUGINFOD_URLS # For gdb not to FUCK MY BRAIN about some FUCKING UBUNTU DEBUG INFOS that i NEVER NEEDED
 
-shite() {
-    TARGET=~/si ~/i/shitcryption/shitcryption.sh "$@"
-}
+alias shite="~/i/shitcryption/shitcryption.sh"
 
 export MICRONOTES_LOCAL_DIR=~/micronotes
 export MICRONOTES_REMOTE_DIR=micronotes
