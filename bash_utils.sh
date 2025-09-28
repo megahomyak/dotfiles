@@ -23,6 +23,10 @@ alias gd="git diff --color-words"
 alias gdh="gd HEAD"
 
 alias nn="nvim -c 'set noeol'"
+gen() {
+    printf "%s" "$1" >> general
+    blabu general
+}
 
 HISTSIZE=300000
 HISTFILESIZE=300000
