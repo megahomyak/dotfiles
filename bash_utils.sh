@@ -34,10 +34,12 @@ HISTFILESIZE=300000
 push() (
     cd $PROJECTS_PATH/"$1" && ( gc ; gp )
 )
+complete -F _i push
 
 pull() (
     cd $PROJECTS_PATH/"$1" && git pull
 )
+complete -F _i pull
 
 reload() {
     source ~/.bashrc
