@@ -46,7 +46,11 @@ reload() {
 c() {
     cd "$@" && ls
 }
+_cd() {
+    COMPREPLY=( $(compgen -d -- "$2") )
+}
 complete -F _cd c
+complete -F _cd cd
 d() {
     c ..
 }
@@ -54,7 +58,7 @@ i() {
     c ~/i/$1
 }
 _i() {
-    COMPREPLY=( $( ls -pA ~/i | grep / | grep "^$2" ) );
+    COMPREPLY=( $( ls -pA ~/i | grep / | grep "^$2" ) )
 }
 complete -F _i i
 
@@ -78,7 +82,7 @@ m() {
     SCRIPT_HOME=~/i/project_manager ~/i/project_manager/"$@"
 }
 _m() {
-    COMPREPLY=( $( ls ~/i/project_manager | grep "^$2" ) );
+    COMPREPLY=( $( ls ~/i/project_manager | grep "^$2" ) )
 }
 complete -F _m m
 
