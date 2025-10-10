@@ -157,7 +157,7 @@ deproxify() {
 }
 
 chat() {
-    python ~/i/simple_chat/chat.py "$1"
+    ~/i/simple_chat/venv/bin/python ~/i/simple_chat/chat.py "$1"
 }
 
 alias lsd='ls --group-directories-first'
