@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 read -p "This is really fucking dangerous. Do you really wish to proceed? (y/n): " yn
 
 if [ "$yn" == "y" ]; then
