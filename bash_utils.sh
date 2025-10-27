@@ -24,8 +24,12 @@ alias gdh="gd HEAD"
 
 alias nn="nvim -c 'set noeol'"
 gen() {
-    printf "%s" "$1" >> general
-    blabu general
+    if [ "$1" == "" ]; then
+        tail -n 20 general
+    else
+        printf "%s" "$1" >> general
+        blabu general
+    fi
 }
 
 HISTSIZE=300000
