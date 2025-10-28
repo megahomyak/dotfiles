@@ -204,7 +204,7 @@ unset DEBUGINFOD_URLS # For gdb not to FUCK MY BRAIN about some FUCKING UBUNTU D
 alias shite="~/i/shitcryption/shitcryption.sh"
 
 export MICRONOTES_LOCAL_DIR=~/micronotes
-export MICRONOTES_REMOTE_DIR=micronotes
+export MICRONOTES_REMOTE_DIR=state/micronotes
 export MICRONOTES_REMOTE_CREDENTIALS=main
 alias mi=~/i/micronotes/micronotes.sh
 
