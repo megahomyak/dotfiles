@@ -205,7 +205,7 @@ alias shite="~/i/shitcryption/shitcryption.sh"
 
 export MICRONOTES_LOCAL_DIR=~/micronotes
 export MICRONOTES_REMOTE_DIR=micronotes
-export MICRONOTES_REMOTE_CREDENTIALS=orange
+export MICRONOTES_REMOTE_CREDENTIALS=main
 alias mi=~/i/micronotes/micronotes.sh
 
 export CONVENIENT_AGE_STORAGE_DIRECTORY=~/convenient-age
