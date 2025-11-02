@@ -18,7 +18,7 @@ alias gl="git log"
 alias gp="until0 git push --tags && until0 git push --all"
 alias gcp="gc && gp"
 alias gs="git status"
-alias gcpd="gc && gp && m deploy"
+alias gcpd="gc && gp && m git-deploy"
 alias gd="git diff --color-words"
 alias gdh="gd HEAD"
 
