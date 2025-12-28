@@ -199,8 +199,6 @@ EOF
     ./a.out
 )
 
-unset DEBUGINFOD_URLS # For gdb not to FUCK MY BRAIN about some FUCKING UBUNTU DEBUG INFOS that i NEVER NEEDED
-
 alias shite="~/i/shitcryption/shitcryption.sh"
 
 export MICRONOTES_LOCAL_DIR=~/micronotes
