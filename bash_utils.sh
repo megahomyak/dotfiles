@@ -53,7 +53,8 @@ c() {
     cd "$@" && ls
 }
 _cd() {
-    COMPREPLY=( $(compgen -d -- "$2") )
+    COMPREPLY=( $(compgen -S / -d -- "$2") )
+    compopt -o nospace
 }
 complete -F _cd c
 complete -F _cd cd
@@ -209,8 +210,11 @@ alias mi=~/i/micronotes/micronotes.sh
 export CONVENIENT_AGE_STORAGE_DIRECTORY=~/convenient-age
 alias ca=~/i/convenient-age/convenience.sh
 
-export TIME_TRACKER_REMOTE_PATH="state/time_tracker/time_track"
-export TIME_TRACKER_LOCAL_PATH="~/time_track"
+export TIME_TRACKER_REMOTE_PATH=state/time_tracker/time_track
+export TIME_TRACKER_LOCAL_PATH=~/time_track
+export TIME_TRACKER_TEMP_PATH=~/time_track_temp
+export TIME_TRACKER_KEY_PATH=~/micronotes/key.txt
+export TIME_TRACKER_REMOTE=main
 alias tt=~/i/time_tracker/time_tracker.sh
 
 export secret_stash_remote_dir=state/ss
