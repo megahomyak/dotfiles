@@ -224,3 +224,5 @@ export secret_stash_connect_timeout=5
 alias ss=~/i/secret_stash/secret_stash.sh
 
 export PAGER=less
+
+alias cop="xclip -selection c"
