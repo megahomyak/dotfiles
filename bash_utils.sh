@@ -78,7 +78,7 @@ export PS1="$(
     echo "$GRAY\D{%d.%m.%Y} \t$RESET $GREEN\u@\h$RESET:$BLUE\w$RESET\n\$ "
 )"
 
-alias orange="ssh orange"
+alias ssh="env TERM=xterm-256color ssh"
 
 recent() {
     ls -tlA | head
