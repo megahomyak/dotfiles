@@ -21,6 +21,7 @@ alias gs="git status"
 alias gcpd="gc && gp && m git-deploy"
 alias gd="git diff --color-words"
 alias gdh="gd HEAD"
+alias gitupd="git commit --amend && git push --force"
 
 alias nn="nvim -c 'set noeol'"
 gen() {
