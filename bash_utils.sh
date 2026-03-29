@@ -227,3 +227,11 @@ alias ss=~/i/secret_stash/secret_stash.sh
 export PAGER=less
 
 alias cop="xclip -selection c"
+
+hcd() { # hcd - "HomCom Deploy"
+    while [ ! -f "regenerate.mjs" ]; do
+        cd ..
+    done
+    node regenerate.mjs
+    gcpd
+}
