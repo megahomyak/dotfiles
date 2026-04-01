@@ -235,3 +235,8 @@ hcd() { # hcd - "HomCom Deploy"
     node regenerate.mjs
     gcpd
 }
+
+a() (
+    cd "$1"
+    nvim index.md
+)
