@@ -229,10 +229,10 @@ export PAGER=less
 alias cop="xclip -selection c"
 
 hcd() { # hcd - "HomCom Deploy"
-    while [ ! -f "regenerate.mjs" ]; do
+    while [ ! -f "regenerate.sh" ]; do
         cd ..
     done
-    node regenerate.mjs
+    ./regenerate.sh
     gcpd
 }
 
