@@ -237,6 +237,7 @@ hcd() { # hcd - "HomCom Deploy"
 }
 
 a() (
+    mkdir -p "$1"
     cd "$1"
     nvim index.md
 )
