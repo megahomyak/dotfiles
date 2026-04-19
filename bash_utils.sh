@@ -241,3 +241,15 @@ a() (
     cd "$1"
     nvim index.md
 )
+
+jupy_init() (
+    if ! poetry env info --path 2>/dev/null; then
+        poetry init -n
+        poetry add ipykernel
+    fi
+    poetry run python -m ipykernel install --user --name="$(basename "$(poetry env info --path)")"
+)
+
+jupy() (
+    poetry run jupyter notebook
+)
