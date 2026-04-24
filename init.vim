@@ -155,4 +155,4 @@ let g:mdip_imgname = 'image'
 map <a-d> <Esc>
 imap <a-d> <Esc>
 
-command! UseMixtral execute "normal! iMODEL mixtral-8x7b-32768\<CR>USER "
+command! CatSayWhat w !cd ~/i/cat_say_what;poetry run python cat_say_what.py
