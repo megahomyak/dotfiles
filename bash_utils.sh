@@ -253,3 +253,8 @@ jupy_init() (
 jupy() (
     poetry run jupyter notebook
 )
+
+cat_say_what() (
+    cd ~/i/cat_say_what
+    poetry run python cat_say_what.py
+)
