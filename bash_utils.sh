@@ -258,3 +258,5 @@ cat_say_what() (
     cd ~/i/cat_say_what
     poetry run python cat_say_what.py
 )
+
+export PATH="$PATH:/home/megahomyak/i/lxc-utils"
