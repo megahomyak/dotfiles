@@ -242,6 +242,7 @@ a() (
     nvim index.md
 )
 
+<<<<<<< HEAD
 jupy_init() (
     if ! poetry env info --path 2>/dev/null; then
         poetry init -n
@@ -260,3 +261,6 @@ cat_say_what() (
 )
 
 export PATH="$PATH:/home/megahomyak/i/lxc-utils"
+=======
+ffsilent() { ffmpeg -i "$1" -c copy -an "${1%.*}-nosound.${1#*.}"; }
+>>>>>>> b706e0f (+ffsilent())
