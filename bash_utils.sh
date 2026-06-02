@@ -99,7 +99,7 @@ alias nvim="nvim -n"
 alias py="python"
 
 what_hogs_port() {
-    sudo netstat -tulpn | grep :$1
+    /bin/ss -tulpn | grep :$1
 }
 
 steal() {
