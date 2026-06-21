@@ -267,3 +267,7 @@ alias pipka="python ~/i/pipka/pipka.py"
 
 # For further alias expansion:
 alias sudo='sudo '
+
+summ() {
+    python3 -c 'print(sum(int(a) for a in input("Ur nums: ").split()))'
+}
