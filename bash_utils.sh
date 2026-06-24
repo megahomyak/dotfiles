@@ -271,3 +271,7 @@ alias sudo='sudo '
 summ() {
     python3 -c 'import sys; print(sum(map(int, sys.argv[1:])))' "$@"
 }
+
+tbuild() {
+    ./build && cp app.apk /sdcard
+}
