@@ -263,7 +263,7 @@ export PATH="$PATH:/home/megahomyak/i/lxc-utils"
 
 ffsilent() { ffmpeg -i "$1" -c copy -an "${1%.*}-nosound.${1#*.}"; }
 
-alias pipka="python ~/i/pipka/pipka.py"
+alias pipka="python ~/i/pipka/pipka.py "
 
 # For further alias expansion:
 alias sudo='sudo '
