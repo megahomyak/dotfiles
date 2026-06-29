@@ -275,3 +275,9 @@ summ() {
 tbuild() {
     ./build && cp app.apk /sdcard
 }
+
+secretive() {
+    lxc-start secretive
+    lxc-attach secretive -- env -i -- bash
+    lxc-stop secretive
+}
