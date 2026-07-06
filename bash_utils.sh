@@ -278,6 +278,6 @@ tbuild() {
 
 secretive() {
     lxc-start secretive
-    lxc-attach secretive -- env -i HOME=/root bash -c 'cd ~; exec bash'
+    lxc-attach secretive -- env -i HOME=/root "TERM=$TERM" bash -c 'cd ~; exec bash'
     lxc-stop secretive
 }
