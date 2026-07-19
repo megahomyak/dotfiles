@@ -229,10 +229,10 @@ export PAGER=less
 alias cop="xclip -selection c"
 
 hcd() ( # hcd - "HomCom Deploy"
-    while [ ! -f "regenerate.py" ]; do
+    while [ ! -f "generate.py" ]; do
         cd ..
     done
-    python regenerate.py
+    python generate.py
     gcpd
 )
 
