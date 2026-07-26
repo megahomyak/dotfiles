@@ -25,3 +25,4 @@ link sudo xinput/90-darn-tablet.conf /usr/share/X11/xorg.conf.d/90-darn-tablet.c
 link sudo hwdb.d/99-capslk-esc-swap.hwdb /etc/udev/hwdb.d/99-capslk-esc-swap.hwdb
 link nosudo .vimrc ~/.vimrc
 link sudo security/limits.conf /etc/security/limits.conf
+link nosudo environment.d/firefox-xinput2.conf ~/.config/environment.d/firefox-xinput2.conf
