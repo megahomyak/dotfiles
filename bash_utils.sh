@@ -291,3 +291,7 @@ och() ( # "OpenCodeHere"
     lxc-start aicoding -s "lxc.mount.entry=$(pwd) ${container_dir:1} none bind,create=dir 0 0" -s "lxc.idmap=u 0 $(id -u) 1" -s "lxc.idmap=g 0 $(id -g) 1" --logfile /dev/stdout
     lxc-attach aicoding -- env -i HOME=/root "TERM=$TERM" bash -c "cd ${container_dir} && bash"
 )
+
+minimal() {
+    env 'PS1=$ ' bash --norc
+}
