@@ -58,7 +58,6 @@ _cd() {
     compopt -o nospace
 }
 complete -F _cd c
-complete -F _cd cd
 d() {
     c ..
 }
@@ -277,9 +276,10 @@ tbuild() {
 }
 
 secretive() (
-    lxc-start secretive
-    lxc-attach secretive -- env -i HOME=/root TERM=xterm bash -c 'cd ~; exec bash'
-    lxc-stop secretive
+    CONTNAME=${1:-secretive}
+    lxc-start $CONTNAME
+    lxc-attach $CONTNAME -- env -i HOME=/root TERM=xterm bash -c 'cd ~; exec bash'
+    lxc-stop $CONTNAME
 )
 
 och() ( # "OpenCodeHere"
