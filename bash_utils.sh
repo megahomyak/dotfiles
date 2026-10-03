@@ -7,6 +7,10 @@ detach() {
     "$@" &
     disown -h %%
 }
+sdetach() {
+    "$@" >/dev/null 2>/dev/null &
+    disown -h %%
+}
 shopt -s expand_aliases
 until0() {
     while ! "$@"; do
